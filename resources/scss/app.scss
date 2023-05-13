@@ -1,1 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+
+$yellow: yellow;
+body {
+    background-color: $yellow;
+}

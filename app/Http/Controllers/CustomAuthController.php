@@ -57,6 +57,7 @@ class CustomAuthController extends Controller
 
     public function registercheck(Request $request)
     {
+        
         $request->validate([
             'firstname'=>'required',
             'lastname'=>'required',
