@@ -25,3 +25,5 @@ Route::get('register',[CustomAuthController::class,"register"])->name('register-
 Route::post('registercheck',[CustomAuthController::class,"registercheck"])->name('registercheck');
 
 Route::get('logout',[CustomAuthController::class,"logout"])->name('logout');
+
+Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
