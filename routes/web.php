@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
-
+use App\Http\Controllers\BooksController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +27,7 @@ Route::post('registercheck',[CustomAuthController::class,"registercheck"])->name
 Route::get('logout',[CustomAuthController::class,"logout"])->name('logout');
 
 Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
+
+//Convention Over Configuration
+Route::get('books','App\Http\Controllers\BooksController@index');
+Route::get('books/{book}','App\Http\Controllers\BooksController@show');
