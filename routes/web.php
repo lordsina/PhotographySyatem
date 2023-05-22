@@ -30,4 +30,5 @@ Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
 
 //Convention Over Configuration
 Route::get('books','App\Http\Controllers\BooksController@index');
+Route::post('books','App\Http\Controllers\BooksController@store');
 Route::get('books/{book}','App\Http\Controllers\BooksController@show');

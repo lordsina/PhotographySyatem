@@ -31,9 +31,14 @@ class BooksController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,Book $book)
     {
-        //
+        //return $request->all();
+        $book->name=$request->name;
+        $book->title=$request->title;
+        $book->save();
+
+        return back();
     }
 
     /**
