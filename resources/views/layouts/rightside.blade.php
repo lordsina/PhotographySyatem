@@ -1,4 +1,3 @@
-<ul class="list-group list-group-flush">
-  <li class="list-group-item">داشبورد</li>
-  <li class="list-group-item">مدیریت کتاب ها</li>
-</ul>
+<p>داشبورد</p>
+<hr/>
+<p> مدیریت کتاب ها</p>

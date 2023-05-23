@@ -16,7 +16,7 @@
             <div class="container-fluid text-center">
                 <div class="row">
                   <div class="col-sm-12 col-xs-12 col-md-3">
-                    <div class="card mb-3 ">
+                    <div class="card mb-3 pt-3 ">
                     {{-- Right Side Section --}}
                     @include('layouts.rightside')
                     </div>

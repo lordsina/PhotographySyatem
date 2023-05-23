@@ -32,7 +32,11 @@ class BookCommentsController extends Controller
         //$bookcomment=new Bookcomment(['fullname'=>$request->fullname,'description'=>$request->description]);
         //$book->bookcomments()->save($bookcomment);
         //----------------------------------------------------------------------------------------------------
-        $book->bookcomments()->create(['fullname'=>$request->fullname,'description'=>$request->description]);
+        //$book->bookcomments()->create(['fullname'=>$request->fullname,'description'=>$request->description]);
+
+
+        $book->bookcomments()->create($request->all());
+
         return back();
     }
 
