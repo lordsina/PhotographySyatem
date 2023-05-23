@@ -10,6 +10,8 @@ class Bookcomment extends Model
 {
     use HasFactory;
 
+    protected $fillable=['fullname','description'];
+
     public function book(){
         return $this->belongsTo(Book::class);
     }
