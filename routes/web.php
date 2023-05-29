@@ -28,8 +28,16 @@ Route::get('logout',[CustomAuthController::class,"logout"])->name('logout');
 
 Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
 
-//Convention Over Configuration
+
+
 Route::get('books','App\Http\Controllers\BooksController@index');//Show-Books
+ Route::get('books/{book}/edit','App\Http\Controllers\BooksController@edit');//Show-Books
 Route::post('books','App\Http\Controllers\BooksController@store');//Add-Books
+
+
 Route::get('books/{book}','App\Http\Controllers\BooksController@show');//Show-BookComments
 Route::post('books/{book}','App\Http\Controllers\BookCommentsController@store');//Add-BookComments
+
+
+
+

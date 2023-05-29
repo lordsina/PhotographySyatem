@@ -2,11 +2,20 @@
 @section('content')
 <h1>کتاب ها</h1>
 <hr>
-@foreach ($books as $book )
-    <div>
-    <a href="/books/{{ $book->id }}">{{ $book->title }}</a>
-    </div>
-@endforeach
+<div class="list-group">
+    @foreach ($books as $book )
+    <a href="/books/{{ $book->id }}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ $book->title }}</h5>
+        <small>3 days ago</small>
+        </div>
+        <p class="mb-1">{{  $book->title  }}</p>
+        <small>hkjk</small>
+        
+    </a>
+    @endforeach
+</div>
+
 <hr>
 <h3 class="mt-3">کتاب جدید</h3>
 <form method="POST" action="/books">
