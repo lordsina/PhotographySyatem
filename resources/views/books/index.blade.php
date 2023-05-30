@@ -2,18 +2,23 @@
 @section('content')
 <h1>کتاب ها</h1>
 <hr>
-<div class="list-group">
-    @foreach ($books as $book )
-    <a href="/books/{{ $book->id }}" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ $book->title }}</h5>
-        <small>3 days ago</small>
-        </div>
-        <p class="mb-1">{{  $book->title  }}</p>
-        <small>hkjk</small>
-        
-    </a>
-    @endforeach
+<div class="row">
+@foreach ($books as $book )
+
+
+<div class="col-sm-6">
+    <div class="card mt-2">
+      <div class="card-body">
+        <h5 class="card-title"><a href="/books/{{ $book->id }}">{{ $book->name }}</a></h5>
+        <p class="card-text">{{ $book->title }}</p>
+        <a href="/books/{{ $book->id }}" class="btn btn-primary mt-2">مشاهده</a>
+        <a href="/books/{{ $book->id }}/edit" class="btn btn-secondary mt-2">بروزرسانی</a>
+        <a href="/books/{{ $book->id }}" class="btn btn-danger mt-2">حذف</a>
+
+      </div>
+    </div>
+</div>
+@endforeach
 </div>
 
 <hr>

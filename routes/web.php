@@ -31,8 +31,9 @@ Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
 
 
 Route::get('books','App\Http\Controllers\BooksController@index');//Show-Books
- Route::get('books/{book}/edit','App\Http\Controllers\BooksController@edit');//Show-Books
+Route::get('books/{book}/edit','App\Http\Controllers\BooksController@edit');//Show-Books
 Route::post('books','App\Http\Controllers\BooksController@store');//Add-Books
+Route::patch('books/{book}','App\Http\Controllers\BooksController@update');
 
 
 Route::get('books/{book}','App\Http\Controllers\BooksController@show');//Show-BookComments

@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('content')
-<h3 class="mt-3">کتاب {{ $book->id }} </h3>
-<form method="POST" action="/books">
+<h3 class="mt-3">ویرایش کتاب</h3>
+<form method="POST" action="/books/{{$book->id}}">
+    {{-- <input type="hidden" name="_method" value="PATCH"> --}}
+    {{ method_field('PATCH') }}
     @csrf 
-    <div class="form-group">
+    <div class="form-group text-right">
+        <label for="name" class="">اسم کتاب</label>
         <input name="name" type="text" class="form-control" id="name" aria-describedby="namehelp" placeholder="نام کتاب" value="{{ $book->name }}">
     </div>
     <div class="form-group mt-2">
