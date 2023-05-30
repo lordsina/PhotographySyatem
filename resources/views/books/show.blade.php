@@ -1,12 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<h1>{{ $book->title }}</h1>
+<h1>{{ $book->name }}</h1>
+<h3>{{ $book->title  }}</h3>
+<h3>{{ $book->user_id  }}</h3>
 <hr/>
 نظرات
 <hr/>
 <ul>
 @foreach ( $book->bookcomments as $comment )
-    <li>{{ $comment->fullname  }}</li>
+    <li>{{ $comment->fullname .' --- '.$comment->user->firstname  }}</li>
 @endforeach
 </ul>
 <hr/>
@@ -14,6 +16,7 @@
 <form method="POST" action="/books/{{ $book->id }}">
     @csrf 
     <div class="form-group">
+        <input type="hidden" name="user_id" value="{{  Auth::user()->id}}">
         <input name="fullname" type="text" class="form-control" id="fullname" aria-describedby="namehelp" placeholder="نام و نشان">
     </div>
     <div class="form-group mt-2">

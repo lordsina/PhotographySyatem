@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -37,7 +38,6 @@ class BooksController extends Controller
         $book->name=$request->name;
         $book->title=$request->title;
         $book->save();
-
         return back();
     }
 
@@ -63,6 +63,9 @@ class BooksController extends Controller
         //$book=Book::findOrFail($id);
         //return view('books.show',compact('book'));
 
+        //$t=Book::with('bookcomments.user')->get();
+        //$t=Book::with('bookcomments.user')->get()->find(1);
+        $book->load('bookcomments.user');
         return view('books.show',compact('book'));
 
     }

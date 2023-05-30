@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('bookcomments', function (Blueprint $table) {
             $table->id();
             $table->integer('book_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('fullname');
             $table->string('description');
             $table->timestamps();

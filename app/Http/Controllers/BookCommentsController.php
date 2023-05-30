@@ -34,6 +34,7 @@ class BookCommentsController extends Controller
         //----------------------------------------------------------------------------------------------------
         //$book->bookcomments()->create(['fullname'=>$request->fullname,'description'=>$request->description]);
 
+        //return $request->all();
 
         $book->bookcomments()->create($request->all());
 
