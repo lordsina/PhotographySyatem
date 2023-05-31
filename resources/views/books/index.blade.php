@@ -33,7 +33,7 @@
         <textarea class="form-control mt-2" id="title" name="title" rows="3"></textarea>
     </div>
     <div class="form-group mt-2">
-        <button type="submit" class="btn btn-primary mb-2">افزودن کتاب</button>
+        <button type="submit" class="btn btn-primary mb-2">افزودن کتاب </button>
     </div>
 </form>
 
