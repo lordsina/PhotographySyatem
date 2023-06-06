@@ -16,15 +16,18 @@
 <form method="POST" action="/books/{{ $book->id }}">
     @csrf 
     <div class="form-group">
-        <input type="hidden" name="user_id" value="">
-        <input name="fullname" type="text" class="form-control" id="fullname" aria-describedby="namehelp" placeholder="نام و نشان">
+        <input name="fullname" type="text" class="form-control" id="fullname" aria-describedby="namehelp" value="{{ old('fullname') }}" placeholder="نام و نشان">
     </div>
     <div class="form-group mt-2">
         <label for="description">نظر</label>
-        <textarea class="form-control mt-2" id="description" name="description" rows="3"></textarea>
+        <textarea class="form-control mt-2" id="description" name="description" rows="3">{{ old('description') }}</textarea>
     </div>
     <div class="form-group mt-2">
         <button type="submit" class="btn btn-primary mb-2">افزودن نظر</button>
     </div>
 </form>
+
+
+
+
 @endsection

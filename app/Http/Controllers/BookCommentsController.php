@@ -37,6 +37,9 @@ class BookCommentsController extends Controller
         //$book->bookcomments()->create(['fullname'=>$request->fullname,'description'=>$request->description]);
 
         //return $request->all();
+        $this->validate($request,['fullname'=>'required',
+                                  'description'=>'required' 
+                                ]);
         $bookcomment=new Bookcomment( $request->all() );
         $bookcomment->user_id=Auth::id();
         $book->bookcomments()->save($bookcomment);
