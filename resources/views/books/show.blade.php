@@ -16,7 +16,7 @@
 <form method="POST" action="/books/{{ $book->id }}">
     @csrf 
     <div class="form-group">
-        <input type="hidden" name="user_id" value="{{  Auth::user()->id}}">
+        <input type="hidden" name="user_id" value="">
         <input name="fullname" type="text" class="form-control" id="fullname" aria-describedby="namehelp" placeholder="نام و نشان">
     </div>
     <div class="form-group mt-2">

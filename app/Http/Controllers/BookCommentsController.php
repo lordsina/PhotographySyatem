@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Bookcomment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class BookCommentsController extends Controller
 {
@@ -35,8 +37,11 @@ class BookCommentsController extends Controller
         //$book->bookcomments()->create(['fullname'=>$request->fullname,'description'=>$request->description]);
 
         //return $request->all();
-
-        $book->bookcomments()->create($request->all());
+        $bookcomment=new Bookcomment( $request->all() );
+        $bookcomment->user_id=Auth::id();
+        $book->bookcomments()->save($bookcomment);
+        //$book->bookcomments()->create($request->all());
+        
 
         return back();
     }
