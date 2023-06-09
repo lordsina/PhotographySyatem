@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\UsersController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +44,9 @@ Route::group(['middleware'=>['web']],function(){
     Route::get('books/{book}','App\Http\Controllers\BooksController@show');//Show-BookComments
     Route::post('books/{book}','App\Http\Controllers\BookCommentsController@store');//Add-BookComments
 
+    Route::get('users',[UsersController::class,"index"]);//show-Users
+
+   
 
 });
 

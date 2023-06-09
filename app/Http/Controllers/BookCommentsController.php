@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class BookCommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        #$this->middleware('auth',['only'=>['index']]);
+        #$this->middleware('auth',['except'=>['index']]);
+
+    }
     /**
      * Display a listing of the resource.
      */

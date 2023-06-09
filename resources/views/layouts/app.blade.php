@@ -15,13 +15,15 @@
         <div>
             <div class="container-fluid text-center">
                 <div class="row">
+                  @if (Auth::check())
                   <div class="col-sm-12 col-xs-12 col-md-3">
                     <div class="">
                     {{-- Right Side Section --}}
                     @include('layouts.rightside')
                     </div>
                   </div>
-                  <div class="col-sm-12 col-xs-12  col-md-6">
+                  @endif
+                  <div class="col-sm-12 col-xs-12  @if(Auth::check())col-md-6 @else col-md-9 @endif ">
                         @include('layouts.c-header')
                     <div class="card p-5 mb-3 ">
                         {{-- Content Section --}}

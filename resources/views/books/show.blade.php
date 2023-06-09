@@ -8,7 +8,14 @@
 <hr/>
 <ul>
 @foreach ( $book->bookcomments as $comment )
-    <li>{{ $comment->fullname .' --- '.$comment->user->firstname  }}</li>
+        <div class="card border-success mb-3">
+            <div class="card-header bg-transparent border-success">{{ $comment->fullname }}</div>
+            <div class="card-body text-success">
+                <h5 class="card-title">{{ $comment->id }}</h5>
+                <p class="card-text">{{ $comment->description }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">{{ $comment->fullname }}</div>
+        </div>
 @endforeach
 </ul>
 <hr/>
