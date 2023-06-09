@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>سیستم مدیریت آتلیه</title>
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-        <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-        <script>
+        <script type="module">
         $(document).ready(function(e) {   
           $('#ale').delay(3000).slideUp(300);
         });
