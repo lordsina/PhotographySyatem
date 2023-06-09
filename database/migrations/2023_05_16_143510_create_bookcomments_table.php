@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('bookcomments', function (Blueprint $table) {
             $table->id();
-            $table->integer('book_id')->unsigned()->index();
-            $table->integer('user_id')->unsigned()->index();
+            $table->unsignedBigInteger('book_id')->unsigned()->index();
+            $table->unsignedBigInteger('user_id')->unsigned()->index();
             $table->string('fullname');
             $table->string('description');
             $table->timestamps();
+
+            //$table->foreignId('user_id')->constrained()->onDelete('cascade'); //relationship
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
         });
     }
 

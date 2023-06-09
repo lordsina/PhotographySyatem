@@ -14,7 +14,7 @@
                 <h5 class="card-title">{{ $comment->id }}</h5>
                 <p class="card-text">{{ $comment->description }}</p>
             </div>
-            <div class="card-footer bg-transparent border-success">{{ $comment->fullname }}</div>
+            <div class="card-footer bg-transparent border-success"> {{ $comment->user->firstname }}@</div>
         </div>
 @endforeach
 </ul>
