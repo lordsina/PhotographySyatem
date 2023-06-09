@@ -53,7 +53,8 @@ class BookCommentsController extends Controller
         $book->bookcomments()->save($bookcomment);
         //$book->bookcomments()->create($request->all());
         
-
+        flash("باموفقیت نظر شما ثبت شد.",'success');
+      
         return back();
     }
 

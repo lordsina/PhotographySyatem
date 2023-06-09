@@ -33,8 +33,4 @@
         <button type="submit" class="btn btn-primary mb-2">افزودن نظر</button>
     </div>
 </form>
-
-
-
-
 @endsection

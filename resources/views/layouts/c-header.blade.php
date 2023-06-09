@@ -5,3 +5,9 @@
     @endforeach
     </div>
 @endif
+
+@if(session('flash_message'))
+    <div class="alert alert-{{ session('flash_message_level') }}" id="ale" role="alert">
+        <p>{{session('flash_message') }}</p>
+    </div>
+@endif
