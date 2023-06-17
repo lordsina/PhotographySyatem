@@ -16,5 +16,9 @@ class Book extends Model
         return $this->hasMany(Bookcomment::class);
     }
 
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
+
 
 }
