@@ -21,6 +21,7 @@ class BooksController extends Controller
     
     public function index()
     {
+        
         //First Way DB Data Featching
  
         //$books=\DB::table('books')->get();  or   use Illuminate\Support\Facades\DB
@@ -47,6 +48,7 @@ class BooksController extends Controller
         $book->name=$request->name;
         $book->title=$request->title;
         $book->save();
+        $book->tags()->attach($request->input('tags'));
         return back();
     }
 
