@@ -18,6 +18,8 @@ class Book extends Model
 
     public function tags(){
         return $this->belongsToMany(Tag::class);  //Many To Many
+
+        //return $this->belongsToMany(Tag::class,'Sina_alis_tables','col1',col2);  // if change the name of table or col
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +25,9 @@ class BooksController extends Controller
  
         //$books=\DB::table('books')->get();  or   use Illuminate\Support\Facades\DB
         $books=DB::table('books')->get();
-        return view('books.index',compact('books'));
+
+        $tags=Tag::all();
+        return view('books.index',compact('books','tags'));
     }
 
     /**

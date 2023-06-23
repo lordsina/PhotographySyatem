@@ -29,9 +29,18 @@
         <input name="name" type="text" class="form-control" id="name" aria-describedby="namehelp" placeholder="نام کتاب">
     </div>
     <div class="form-group mt-2">
+        <select name="tags" id="tags" multiple="multiple">
+            @foreach ($tags as $tag )
+                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group mt-2">
         <label for="title">موضوع کتاب</label>
         <textarea class="form-control mt-2" id="title" name="title" rows="3"></textarea>
     </div>
+
     <div class="form-group mt-2">
         <button type="submit" class="btn btn-primary mb-2">افزودن کتاب </button>
     </div>
