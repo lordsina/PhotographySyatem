@@ -3,6 +3,14 @@
 <h1>{{ $book->name }}</h1>
 <h3>{{ $book->title  }}</h3>
 <h3>{{ $book->user_id  }}</h3>
+@unless ($book->tags->isEmpty())
+<h4>Tags</h4>
+<ul>
+    @foreach ($book->tags as $tag )
+        <li>{{ $tag->name }}</li>
+    @endforeach
+</ul>
+@endunless
 <hr/>
 نظرات
 <hr/>

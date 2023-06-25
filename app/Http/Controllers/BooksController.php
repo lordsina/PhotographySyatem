@@ -47,8 +47,13 @@ class BooksController extends Controller
         //return $request->all();
         $book->name=$request->name;
         $book->title=$request->title;
-        $book->save();
+        $book->save();  
+
+
+
+        
         $book->tags()->attach($request->input('tags'));
+        
         return back();
     }
 

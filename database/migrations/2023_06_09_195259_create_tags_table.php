@@ -19,10 +19,14 @@ return new class extends Migration
 
         // Convention : alphabetical {ABCDEFGHIJKLMNOPQRSTUWXYZ}  ex: table Books & Table Tags ->  book_tag
         Schema::create('book_tag', function (Blueprint $table) {  
-            $table->unsignedBigInteger("book_id")->unsigned()->index();
-            $table->foreign("book_id")->references('id')->on('tags')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedBigInteger("tag_id")->unsigned()->index();
-            $table->foreign("tag_id")->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
+            $table->id();
+            //$table->unsignedBigInteger("book_id")->unsigned()->index();
+            //$table->foreignId("book_id")->references('id')->on('tags')->onDelete('cascade')->onUpdate('cascade');
+            //$table->unsignedBigInteger("tag_id")->unsigned()->index();
+            //$table->foreignId("tag_id")->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->foreignId("book_id")->constrained();
+            $table->foreignId("tag_id")->constrained();
         });
     }
 
