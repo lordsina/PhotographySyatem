@@ -52,7 +52,8 @@ class BooksController extends Controller
 
 
         
-        $book->tags()->attach($request->input('tags'));
+        $book->tags()->sync($request->input('tags'));
+        // $book->tags()->attach($request->input('tags'));
         
         return back();
     }
@@ -91,7 +92,8 @@ class BooksController extends Controller
      */
     public function edit(Book $book)
     {
-        return view('books.edit',compact('book'));
+        $tags=Tag::all();
+        return view('books.edit',compact('book','tags'));
     }
 
     /**
@@ -100,6 +102,7 @@ class BooksController extends Controller
     public function update(Book $book,Request $request)
     {
         $book->update($request->all());
+        $book->tags()->sync($request->input('tags'));
         return back();
     }
 

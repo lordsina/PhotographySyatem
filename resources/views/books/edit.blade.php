@@ -13,6 +13,30 @@
         <label for="title">موضوع کتاب</label>
         <textarea class="form-control mt-2" id="title" name="title" rows="3">{{ $book->title }}</textarea>
     </div>
+
+    <div class="form-group mt-2">
+        <select name="tags[]" title="tags" id="tags" multiple="multiple">
+            @foreach ($tags as $tag )
+                <option 
+                @foreach ($book->tags as $book_Tags )
+                    @if ($tag->name==$book_Tags->name)
+                        selected="selected"
+                    @endif
+                @endforeach
+                 value="{{ $tag->id }}">{{ $tag->name }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    @unless ($book->tags->isEmpty())
+    <h4>Tags</h4>
+    <ul>
+        @foreach ($book->tags as $tag )
+            <li>{{ $tag->name }}</li>
+        @endforeach
+    </ul>
+    @endunless
+
     <div class="form-group mt-2">
         <button type="submit" class="btn btn-primary mb-2">ویرایش کتاب</button>
     </div>
