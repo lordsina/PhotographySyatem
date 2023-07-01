@@ -5,12 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>سیستم مدیریت آتلیه</title>
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-        <script type="module">
-        $(document).ready(function(e) {   
-          $('#ale').delay(3000).slideUp(300);
-        });
-        
-        </script>
+         
+
     </head>
     <body class="bg-primary-Light">
         @include('layouts.nav')
@@ -47,6 +43,11 @@
             {{-- Footer Section --}}
             @include('layouts.footer')
         </footer>
-        
+
+        <script type="module">
+        $(document).ready(function(e) {   
+          $('#ale').delay(3000).slideUp(300);
+        });
+        </script>
     </body>
 </html>

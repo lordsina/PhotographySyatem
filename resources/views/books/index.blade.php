@@ -29,7 +29,7 @@
         <input name="name" type="text" class="form-control" id="name" aria-describedby="namehelp" placeholder="نام کتاب">
     </div>
     <div class="form-group mt-2">
-        <select name="tags[]" title="tags" id="tags" multiple="multiple">
+        <select  name="tags[]" title="tags" class="tags_book" multiple="multiple">
             @foreach ($tags as $tag )
                 <option value="{{ $tag->id }}">{{ $tag->name }}</option>
             @endforeach
