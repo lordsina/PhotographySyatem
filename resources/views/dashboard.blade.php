@@ -13,9 +13,7 @@
           ثبت نام اخرین کاربر
         </p>
         <p>
-          @foreach ($users as $user)
-            {{ $user->firstname.$user->lastname }}
-          @endforeach
+          {{ $users->last()->firstname." ".$users->last()->lastname }}
         </p>
 
       </div>
