@@ -41,7 +41,7 @@ use App\Http\Controllers\UsersController;
 
     Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
 
-    Route::group(['prefix'=>'books'],function(){
+    Route::group(['prefix'=>'books','as'=>'books.'],function(){
         Route::get('/','App\Http\Controllers\BooksController@index');//Show-Books
         Route::get('/{book}/edit','App\Http\Controllers\BooksController@edit');//Show-Books
         Route::post('/','App\Http\Controllers\BooksController@store');//Add-Books
