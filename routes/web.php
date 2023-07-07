@@ -19,7 +19,9 @@ use App\Http\Controllers\UsersController;
 
 Route::group(['middleware'=>['web']],function(){
 
-    Route::get('/',[CustomAuthController::class,"home"]);
+    Route::get('/',['as'=>'Home' ,function(){
+        return view('home');
+    }]);
     Route::get('dashboard',[CustomAuthController::class,"dashboard"])->name("dashboard");
 
 
