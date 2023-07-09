@@ -5,10 +5,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Models\Bookcomment;
 use App\Models\user;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Book extends Model
 {
-     protected $fillable=['name','title'];
+    use HasFactory;
+
+    protected $fillable=['name','title'];
 
 
     public function bookcomments():HasMany{ // we choose name of table which we want to relate it for this function. we use 's' beacuse it has many nodes
