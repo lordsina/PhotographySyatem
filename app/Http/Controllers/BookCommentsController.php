@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Bookcomment;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -69,17 +70,22 @@ class BookCommentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Bookcomment $bookcomment)
     {
-        //
+        //$tags=Tag::all();
+        if(Gate::denies('edit-bookcomment',$bookcomment)){
+            abort(403,'متاسفانه شما اجازه ویرایش این بخش را ندارید.');
+        }
+        return view('bookcomments.edit',compact('bookcomment'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Bookcomment $bookcomment)
     {
-        //
+        $bookcomment->update($request->all());
+        return back();
     }
 
     /**
