@@ -25,8 +25,8 @@ return new class extends Migration
             //$table->unsignedBigInteger("tag_id")->unsigned()->index();
             //$table->foreignId("tag_id")->references('id')->on('books')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreignId("book_id")->constrained();
-            $table->foreignId("tag_id")->constrained();
+            $table->foreignId("book_id")->constrained()->onDelete('cascade');
+            $table->foreignId("tag_id")->constrained()->onDelete('cascade');
         });
     }
 
