@@ -1,6 +1,6 @@
-<div style="height: 200px;" class="border">
-    <div class="w-100 h-25 border pt-2 "><a href="/dashboard">داشبورد</a></div>
-    <div class="w-100 mt-3 h-25 border pt-2"><a href="/books">کتاب ها</a></div>
-    <div class="w-100 mt-3 h-25 border pt-2"><a href="/users">کاربران</a></div>
-    <div class="w-100 mt-3 h-25 border pt-2"><a href="/books">تنظیمات</a></div>
+<div style="height: 250px;" class=" mb-2">
+    <div class="w-100 h-20  border-top border-bottom  pt-2 "><a class="btn" href="/dashboard">داشبورد</a></div>
+    <div class="w-100 mt-3 h-20 border-bottom border-top pt-2"><a class="btn" href="/books">کتاب ها</a></div>
+    <div class="w-100 mt-3 h-20 border-bottom border-top pt-2"><a class="btn" href="/users">کاربران</a></div>
+    <div class="w-100 mt-3 h-20 border-bottom  border-top pt-2"><a class="btn" href="/books">تنظیمات</a></div>
 </div>

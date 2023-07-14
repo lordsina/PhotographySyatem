@@ -5,11 +5,11 @@
 <h3>{{ $book->user_id  }}</h3>
 @unless ($book->tags->isEmpty())
 <h4>Tags</h4>
-<ul>
+<div>
     @foreach ($book->tags as $tag )
-        <li>{{ $tag->name }}</li>
+        <button type="button" class="btn btn-outline-danger">{{ $tag->name }}</button>
     @endforeach
-</ul>
+</div>
 @endunless
 <hr/>
 نظرات
@@ -22,7 +22,9 @@
                 <h5 class="card-title">{{ $comment->id }}</h5>
                 <p class="card-text">{{ $comment->description }}</p>
             </div>
+            
             <div class="card-footer bg-transparent border-success"> {{ $comment->user->firstname }}@</div>
+            <a href="/books/bookcomments/{{ $comment->id  }}">ویرایش</a>
         </div>
 @endforeach
 </ul>

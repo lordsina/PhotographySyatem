@@ -1,7 +1,7 @@
 <nav class="navbar bg-body-tertiary mb-3">
     <div class="container-fluid">
       <span class="navbar-text text-dark">
-        سیستم مدیریت آتلیه
+        <a href="/">سیستم مدیریت</a>
       </span>
       <span class="text-end">
         <div class="btn-group m-2">
