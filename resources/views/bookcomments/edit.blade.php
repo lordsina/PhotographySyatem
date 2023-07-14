@@ -11,7 +11,13 @@
         <textarea class="form-control mt-2" id="description" name="description" rows="3">{{ $bookcomment->description }}</textarea>
     </div>
     <div class="form-group mt-2">
-        <button type="submit" class="btn btn-primary mb-2">ویرایش نظر</button>
+        @can('update',$bookcomment)
+            <button type="submit" class="btn btn-primary mb-2">ویرایش نظر</button>
+        @endcan
+        @cannot('update',$bookcomment)
+            <p class="text-danger">شما مجوز ویرایش ندارید</p>
+        @endcannot
+        
     </div>
 </form>
 @endsection

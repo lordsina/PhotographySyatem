@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Bookcomment;
 use App\Models\User;
+use App\Policies\BookCommentPolicy;
 use Illuminate\Support\Facades\Gate;
 
 // use Illuminate\Support\Facades\Gate;
@@ -17,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        Bookcomment::class => BookCommentPolicy::class,
     ];
 
     /**
@@ -26,8 +27,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        Gate::define('edit-bookcomment',function(User $user,Bookcomment $bookcomment){
-            return $user->id==$bookcomment->user_id;
-        });
+        // Gate::define('edit-bookcomment',function(User $user,Bookcomment $bookcomment){
+        //     //return $user->id==$bookcomment->user_id;
+        //     return $user->owns($bookcomment);
+        // });
     }
 }

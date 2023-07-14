@@ -72,10 +72,16 @@ class BookCommentsController extends Controller
      */
     public function edit(Bookcomment $bookcomment)
     {
+        
+        //if(Gate::denies('edit-bookcomment',$bookcomment)){
+        //    abort(403,'متاسفانه شما اجازه ویرایش این بخش را ندارید.');
+        //}
+        
+        // auth()->loginUsingId(1);
+        //auth()->logout();
+
         //$tags=Tag::all();
-        if(Gate::denies('edit-bookcomment',$bookcomment)){
-            abort(403,'متاسفانه شما اجازه ویرایش این بخش را ندارید.');
-        }
+
         return view('bookcomments.edit',compact('bookcomment'));
     }
 
@@ -84,6 +90,9 @@ class BookCommentsController extends Controller
      */
     public function update(Request $request, Bookcomment $bookcomment)
     {
+        if(Gate::denies('update',$bookcomment)){
+            abort(403,'متاسفانه شما اجازه ویرایش این بخش را ندارید.');
+        }
         $bookcomment->update($request->all());
         return back();
     }
