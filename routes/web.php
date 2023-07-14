@@ -49,6 +49,8 @@ use App\Http\Controllers\UsersController;
         //---------------------
         Route::get('/{book}','App\Http\Controllers\BooksController@show');//Show-BookComments
         Route::post('/{book}','App\Http\Controllers\BookCommentsController@store');//Add-BookComments
+        Route::get('/bookcomments/{bookcomment}','App\Http\Controllers\BookCommentsController@edit');//Edit-BookComments
+        Route::post('/bookcomments/{bookcomment}','App\Http\Controllers\BookCommentsController@update');//Update-BookComments
     });
 
 
