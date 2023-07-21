@@ -24,7 +24,9 @@
             </div>
             
             <div class="card-footer bg-transparent border-success"> {{ $comment->user->firstname }}@</div>
+            @can('edit_forum')
             <a href="/books/bookcomments/{{ $comment->id  }}">ویرایش</a>
+            @endcan
         </div>
 @endforeach
 </ul>

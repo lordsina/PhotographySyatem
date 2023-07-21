@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bookcomment;
 use App\Models\Book;
+use App\Models\Role;
 
 
 class User extends Authenticatable
@@ -62,9 +63,15 @@ class User extends Authenticatable
     
     public function hasRole($role){
         if(is_string($role)){
-            return $this->roles->contain('name',$role);
+            return $this->roles->contains('name',$role);
         }
-        return !! $role->intersect($this->roles)->count;
+        return !! $role->intersect($this->roles)->count();
+    }
+
+    public function assignRole($role){
+        $this->roles()->sync(
+            Role::whereName()->firstOrFail()
+        );
     }
 
 }
