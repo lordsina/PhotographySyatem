@@ -58,6 +58,11 @@ use App\Http\Controllers\UsersController;
 
     Route::get('users',[UsersController::class,"index"]);//show-Users
 
+
+    Route::get('/api/{term}',['middleware'=>['throttle:3'],function($term){
+        return ['result'=>$term];
+    }]);
+
    
 
 });
