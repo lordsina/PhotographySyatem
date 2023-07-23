@@ -74,4 +74,17 @@ class User extends Authenticatable
         );
     }
 
+    // Accessor Firstname user lowercase 
+    public function getFirstnameAttribute($value){
+        return strtolower($value);
+    }
+
+    // Mutator
+    // public function setFirstnameAttribute($value){
+    //     //before you store in database
+
+    //     $this->attributes['username']=strtolower($value);
+    // }
+
+
 }
