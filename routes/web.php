@@ -63,6 +63,10 @@ use App\Http\Controllers\UsersController;
         return ['result'=>$term];
     }]);
 
+       Route::get('/api/user/{term}',['middleware'=>['throttle:3'],function($term){
+        return ['result'=>$term];
+    }]);
+
    
 
 });
