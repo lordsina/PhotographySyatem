@@ -24,6 +24,7 @@ class UserFactory extends Factory
             'phone' => fake()->unique()->e164PhoneNumber(),
             'email_verified_at' => now(),
             'password' => bcrypt('123456'), // password
+            'api_token'=> Str::random(20),
             'remember_token' => Str::random(10),
         ];
     }

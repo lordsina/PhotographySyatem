@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\UsersController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,13 +60,19 @@ use App\Http\Controllers\UsersController;
     Route::get('users',[UsersController::class,"index"]);//show-Users
 
 
-    Route::get('/api/{term}',['middleware'=>['throttle:3'],function($term){
-        return ['result'=>$term];
-    }]);
+    // Route::group(['prefix'=>'api','middleware'=>'auth:sanctum'],function(){
 
-       Route::get('/api/user/{term}',['middleware'=>['throttle:3'],function($term){
-        return ['result'=>$term];
-    }]);
+    //     Route::get('{term}',['middleware'=>['throttle:3'],function($term){
+    //         return ['result'=>$term];
+    //     }]);
+
+    //     Route::get('user/{user}',['middleware'=>['throttle:3'],function(User $user){
+    //         return $user;
+    //     }]);
+
+    // });
+
+
 
    
 
