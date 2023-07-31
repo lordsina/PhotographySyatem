@@ -47,6 +47,7 @@
         <script type="module">
         $(document).ready(function(e) {   
           $('#ale').delay(3000).slideUp(300);
+
         });
         </script>
     </body>

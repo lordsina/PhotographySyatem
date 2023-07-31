@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserApiRequest;
+use App\Models\User;
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -13,8 +16,19 @@ class AuthController extends Controller
         return 'login';
     }
 
-    public function register(){
-        return response()->json('register');
+    public function register(StoreUserApiRequest $request){
+        $request->validate($request->all());
+        $user=User::create([
+        'firstname'=>$request->firstname,
+        'lastname'=>$request->lastname,
+        'email'=>$request->email,
+        'phone'=>$request->phone,
+        'password'=>Hash::make($request->password),
+        ]);
+        return $this->success([
+            'user'=>$user,
+            'token'=> $user->createToken('API token of '.$user->firstname)->planeTextToken,
+        ]);
     }
     /**
      * Display a listing of the resource.

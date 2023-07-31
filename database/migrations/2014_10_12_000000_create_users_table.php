@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            //$table->enum('plan',['a1','a2']);
             $table->rememberToken();
             $table->timestamps();
         });

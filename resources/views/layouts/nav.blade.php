@@ -1,4 +1,4 @@
-<nav class="navbar bg-body-tertiary mb-3">
+<nav class="navbar bg-body-tertiary mb-3 ">
     <div class="container-fluid">
       <span class="navbar-text text-dark">
         <a href="/">سیستم مدیریت</a>
