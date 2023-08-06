@@ -2,8 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Book;
+use App\Models\Bookcomment;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Nette\Utils\Random;
 
 class BookCommentSeeder extends Seeder
 {
@@ -12,6 +16,22 @@ class BookCommentSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\Bookcomment::factory(5)->has(User::factory(2),Book::factory(3))->create();
+    //     Book::factory()
+    //     ->has(
+    //         Bookcomment::factory()
+    //         ->count(5)
+    //         //->state(function (array $attributes,User $user){
+    //        //     return ['user_id'=>$user->all()->random()];
+    //    // })
+    //     )
+    //     ->create();
+
+        // $book=Book::factory()->create();
+
+        // $bookcomments=Bookcomment::factory()
+        // ->count(3)
+        // ->for($book)
+        // ->create();
+        
     }
 }
