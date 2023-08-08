@@ -10,9 +10,11 @@ use Laravel\Sanctum\HasApiTokens;
 use App\Models\Bookcomment;
 use App\Models\Book;
 use App\Models\Role;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 

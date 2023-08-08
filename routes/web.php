@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\DateController;
+use App\Http\Controllers\HallController;
 use App\Http\Controllers\UsersController;
+use App\Models\Hall;
 use App\Models\User;
 use Symfony\Component\Finder\Comparator\DateComparator;
 
@@ -31,7 +33,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
 
 
-    Route::get('dashboard',[CustomAuthController::class,"dashboard"])->name("dashboard");
+    Route::get('dashboard',[CustomAuthController::class,"dashboard"])->middleware(['auth','verified'])->name("dashboard");
 
 
     Route::get('login',[CustomAuthController::class,"index"])->name("login");
@@ -77,7 +79,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
 
     Route::group(['prefix'=>'studio','as'=>'studio.'],function(){
-        Route::resource('dates',DateController::class);
+        Route::resource('halls',HallController::class);
     });
 
     

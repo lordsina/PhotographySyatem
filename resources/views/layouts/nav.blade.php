@@ -6,6 +6,7 @@
       <span class="text-end">
         <div class="btn-group m-2">
           <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="badge badge-light">9</span>
             درود 
             @if(Auth::guest())
              کاربر عزیز
