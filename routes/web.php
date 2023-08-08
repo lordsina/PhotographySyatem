@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\DateController;
 use App\Http\Controllers\UsersController;
 use App\Models\User;
+use Symfony\Component\Finder\Comparator\DateComparator;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +75,12 @@ use App\Models\User;
     // });
 
 
+
+    Route::group(['prefix'=>'studio','as'=>'studio.'],function(){
+        Route::resource('dates',DateController::class);
+    });
+
+    
 
    
 

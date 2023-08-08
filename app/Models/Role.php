@@ -10,7 +10,8 @@ use App\Models\Permission;
 class Role extends Model
 {
     use HasFactory;
-
+    
+    protected $fillable=['name','label'];
     public function permissions(){
         return $this->belongsToMany(Permission::class);
     }

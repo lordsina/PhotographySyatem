@@ -21,7 +21,7 @@ class BookcommentFactory extends Factory
         return [
             "user_id"=>User::all()->random()->id,
             "fullname"=>fake()->firstName(),
-            "description"=>fake()->paragraph(),
+            "description"=>fake()->sentence(),
         ];
     }
     protected $model=Bookcomment::class;

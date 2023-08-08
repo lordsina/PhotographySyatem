@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Hall;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,6 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(BookSeeder::class);
         $this->call(BookCommentSeeder::class);
+        $this->call(RolesAndPermissionsSeeder::class);
+
+        Hall::factory(10)->create();
         
         
 
