@@ -31,7 +31,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
     }]);
 
 
-
+// nothing 
 
     Route::get('dashboard',[CustomAuthController::class,"dashboard"])->middleware(['auth','verified'])->name("dashboard");
 
