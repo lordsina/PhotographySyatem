@@ -27,19 +27,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
-        // Gate::define('edit-bookcomment',function(User $user,Bookcomment $bookcomment){
-        //     //return $user->id==$bookcomment->user_id;
-        //     return $user->owns($bookcomment);
-        // });
-        foreach($this->getPermission() as $permission){
-            Gate::define($permission->name,function($user) use ($permission){
-                return $user->hasRole($permission->roles);
-            });
-        }
+        
     }
 
-    protected function getPermission() {
-        return Permission::with('roles')->get();
-    }
+
 }

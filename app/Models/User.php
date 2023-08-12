@@ -59,22 +59,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->id==$related->user_id;
     }
 
-    public function roles(){
-        return $this->belongsToMany(Role::class);
-    }
-    
-    public function hasRole($role){
-        if(is_string($role)){
-            return $this->roles->contains('name',$role);
-        }
-        return !! $role->intersect($this->roles)->count();
-    }
 
-    public function assignRole($role){
-        $this->roles()->sync(
-            Role::whereName()->firstOrFail()
-        );
-    }
 
     // Accessor Firstname user lowercase 
     public function getFirstnameAttribute($value){

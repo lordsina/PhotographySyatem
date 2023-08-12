@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(BookSeeder::class);
         $this->call(BookCommentSeeder::class);
-        $this->call(RolesAndPermissionsSeeder::class);
 
         Hall::factory(10)->create();
         
