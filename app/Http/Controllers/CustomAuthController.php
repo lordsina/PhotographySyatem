@@ -34,10 +34,10 @@ class CustomAuthController extends Controller
     public function logincheck(Request $request)
     {
         $request->validate([
-            'phone'=>'required',
+            'phone_number'=>'required',
             'password'=>'required',
         ]);
-        $credentials=$request->only('phone','password');
+        $credentials=$request->only('phone_number','password');
         if(Auth::attempt($credentials)){
             return redirect()->intended('dashboard')
             ->with('message','خوش آمدید');

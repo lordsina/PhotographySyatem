@@ -13,10 +13,10 @@
             </div>
             <div class="form-floating mb-3">
               <!-- is-invalid -->
-              <input type="text" name="phone" class="form-control @if ($errors->has('phone')) is-invalid @endif" id="floatingInput" placeholder="+98912000000">
+              <input type="text" name="phone_number" class="form-control @if ($errors->has('phone_number')) is-invalid @endif" id="floatingInput" placeholder="+98912000000">
               <label for="floatingInput">شماره تلفن</label>
             </div>
-            @if ($errors->has('phone')) <p class="text-danger text-start">{{ $errors->first('phone'); }}</p> @endif
+            @if ($errors->has('phone_number')) <p class="text-danger text-start">{{ $errors->first('phone_number'); }}</p> @endif
             <div class="form-floating">
               <input type="password" name="password" class="form-control @if ($errors->has('phone')) is-invalid @endif" id="floatingPassword" placeholder="Password">
               <label for="floatingPassword">رمز عبور</label>

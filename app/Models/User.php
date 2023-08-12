@@ -11,12 +11,12 @@ use App\Models\Bookcomment;
 use App\Models\Book;
 use App\Models\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-
+use Spatie\Permission\Traits\HasRoles;
 
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable,HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -27,7 +27,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'firstname',
         'lastname',
         'email',
-        'phone',
+        'phone_number',
         'password',
     ];
 
@@ -58,8 +58,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $this->id==$related->user_id;
     }
-
-
 
     // Accessor Firstname user lowercase 
     public function getFirstnameAttribute($value){

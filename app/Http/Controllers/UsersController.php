@@ -16,7 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users=User::all();
+        $users=User::with('roles','permissions')->get();
         return view('users.show',compact('users'));
     }
 
