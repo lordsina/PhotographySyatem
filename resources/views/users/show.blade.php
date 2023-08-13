@@ -18,8 +18,18 @@
       <td>{{$user->first_name}}</td>
       <td>{{$user->last_name}}</td>
       <td>
-        {{ $user->getPermissionNames(); }} -
-        {{ $user->getRoleNames(); }}
+        {{ $user->getRoleNames() }} 
+
+      </td>
+      <td>
+
+
+        <?php $ps= $user->getPermissionsViaRoles() ?>
+        @foreach ($ps as $p )
+          {{ $p->name }}
+        @endforeach
+        
+
       </td>
     </tr>
     @endforeach

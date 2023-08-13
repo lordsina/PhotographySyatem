@@ -2,8 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -32,6 +34,14 @@ class UserFactory extends Factory
             'password' => bcrypt('password'), // Default password for all users
             'remember_token' => Str::random(10),
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (User $user) {
+            $roles = Role::inRandomOrder()->limit(rand(1, 3))->get();
+            $user->assignRole($roles);
+        });
     }
 
     /**

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 
-
 class CustomAuthController extends Controller
 {
     /**
@@ -23,6 +22,7 @@ class CustomAuthController extends Controller
     }
     public function index()
     {
+
         if(Auth::check()){
             $users=User::all();
             return view("dashboard",[
