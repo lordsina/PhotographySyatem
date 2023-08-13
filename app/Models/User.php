@@ -62,6 +62,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return strtolower($value);
     }
 
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+    }
     // Mutator
     // public function setFirstnameAttribute($value){
     //     //before you store in database

@@ -11,7 +11,7 @@
             @if(Auth::guest())
              کاربر عزیز
             @else
-            {{ Auth::user()->firstname." ".Auth::user()->lastname }}
+            {{ Auth::user()->first_name." ".Auth::user()->last_name }}
             @endif
           </button>
           <ul class="dropdown-menu text-center">

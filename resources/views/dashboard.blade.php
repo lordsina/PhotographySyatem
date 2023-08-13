@@ -13,7 +13,7 @@
           ثبت نام اخرین کاربر
         </p>
         <p>
-          {{ $users->last()->firstname." ".$users->last()->lastname }}
+          {{ $users->last()->first_name." ".$users->last()->last_name }}
         </p>
 
       </div>

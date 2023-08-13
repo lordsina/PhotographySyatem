@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\DateController;
 use App\Http\Controllers\HallController;
+use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UsersController;
 use App\Models\Hall;
 use App\Models\User;
@@ -62,6 +63,8 @@ use Symfony\Component\Finder\Comparator\DateComparator;
   
 
     Route::get('users',[UsersController::class,"index"]);//show-Users
+
+    Route::resource('todos',TodoController::class);
 
 
     // Route::group(['prefix'=>'api','middleware'=>'auth:sanctum'],function(){
