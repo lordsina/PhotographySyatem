@@ -34,7 +34,8 @@ class PostController extends Controller
         $post = new Post([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
-            'category_id' => $request->input('category_id')
+            'category_id' => $request->input('category_id'),
+            'user_id'=>auth()->user()->id
             // Set other attributes as needed
         ]);
 
@@ -54,6 +55,29 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $categories = Category::all();
         return view('posts.edit', compact('post', 'categories'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $post = Post::findOrFail($id);
+
+        // Validate the input
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'category_id' => 'required|exists:categories,id',
+            // Add more validation rules as needed
+        ]);
+
+        // Update the post
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->category_id = $request->input('category_id');
+        // Update other attributes as needed
+
+        $post->save();
+
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
     }
 
     public function destroy($id)

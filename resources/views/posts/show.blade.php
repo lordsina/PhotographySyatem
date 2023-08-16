@@ -10,5 +10,5 @@
         <!-- Other post details you want to display -->
     </div>
 
-    <a href="{{ route('posts.index') }}" class="btn btn-primary">Back to Posts</a>
+    <a href="{{ route('posts.index') }}" class="btn btn-primary">بازگشت</a>
 @endsection

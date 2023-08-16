@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Categories</h1>
+    <h1>دسته بندی ها</h1>
 
-    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-2">Create Category</a>
+    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-2">ایجاد دسته بندی</a>
 
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Actions</th>
+                <th>ایدی</th>
+                <th>نام</th>
+                <th>عملیات</th>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +19,13 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <!-- View action -->
-                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-sm btn-info">View</a>
-                        
-                        <!-- Exclude Edit and Delete actions -->
+                        <a href="{{ route('categories.show', $category->id) }}" class="btn btn-info">نمایش</a>
+                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">ویرایش</a>
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline;">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('آیا از این کار مطما هستید؟')">حذف</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
