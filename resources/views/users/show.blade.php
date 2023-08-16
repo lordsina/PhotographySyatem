@@ -18,7 +18,7 @@
       <td>{{$user->first_name}}</td>
       <td>{{$user->last_name}}</td>
       <td>
-        {{ $user->getRoleNames() }} 
+        {{ json_encode($user->getRoleNames(), JSON_UNESCAPED_UNICODE)  }} 
 
       </td>
       <td>

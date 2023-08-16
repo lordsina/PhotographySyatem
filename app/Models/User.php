@@ -72,6 +72,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     //     $this->attributes['username']=strtolower($value);
     // }
-
+    // Define the relationship between User and Post
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
 }

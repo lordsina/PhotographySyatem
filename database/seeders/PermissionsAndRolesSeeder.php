@@ -15,9 +15,9 @@ class PermissionsAndRolesSeeder extends Seeder
     {
         // Create permissions
         $permissions = [
-            'create post', 'edit post', 'delete post',
-            'create comment', 'edit comment', 'delete comment',
-            'manage users'
+            'ایجادپست', 'ویرایش پست', 'حذف پست',
+            'نمایش پست', 'ایجاد کاربر', 'حذف کاربر',
+            'ویریش کاربر','نمایش کاربر'
         ];
 
         foreach ($permissions as $permissionName) {
@@ -26,7 +26,7 @@ class PermissionsAndRolesSeeder extends Seeder
 
         // Create roles and assign random permissions
         $roles = [
-            'admin', 'editor', 'author'
+            'ادمین', 'ویرایشگر', 'نویسنده','عکاس','روتوشکار','پرزنت','نورپرداز','مشتری','فروشنده','مدیریت کاربران','کاربر معمولی','کاربر تحریم شکن'
         ];
 
         foreach ($roles as $roleName) {

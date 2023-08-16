@@ -7,6 +7,8 @@ use App\Http\Controllers\DateController;
 use App\Http\Controllers\HallController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 use App\Models\Hall;
 use App\Models\User;
 use Symfony\Component\Finder\Comparator\DateComparator;
@@ -66,7 +68,8 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
     Route::resource('todos',TodoController::class);
 
-
+    Route::resource('posts', PostController::class);
+    Route::resource('categories', CategoryController::class);
     // Route::group(['prefix'=>'api','middleware'=>'auth:sanctum'],function(){
 
     //     Route::get('{term}',['middleware'=>['throttle:3'],function($term){
