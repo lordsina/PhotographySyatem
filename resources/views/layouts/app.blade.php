@@ -5,8 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>سیستم مدیریت آتلیه</title>
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-         
-
+        <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+        <script type="module">
+        $(document).ready(function(e) {   
+          $('#ale').delay(3000).slideUp(300);
+          var bootstrap_enabled = (typeof $().modal == 'function');
+        });
+        </script>
     </head>
     <body class="bg-primary-Light">
         @include('layouts.nav')
@@ -42,13 +48,6 @@
         <footer>
             {{-- Footer Section --}}
             @include('layouts.footer')
-        </footer>
-
-        <script type="module">
-        $(document).ready(function(e) {   
-          $('#ale').delay(3000).slideUp(300);
-
-        });
-        </script>
+        </footer>        
     </body>
 </html>
