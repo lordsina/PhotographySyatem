@@ -5,13 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>سیستم مدیریت آتلیه</title>
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-        <link href="https://unpkg.com/tabulator-tables@5.5.0/dist/css/tabulator.min.css" rel="stylesheet">
-        <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.0/dist/js/tabulator.min.js"></script>
+        <script src="https://kit.fontawesome.com/084dfeabed.js" crossorigin="anonymous"></script>
         <script type="module">
         $(document).ready(function(e) {   
           $('#ale').delay(3000).slideUp(300);
           var bootstrap_enabled = (typeof $().modal == 'function');
         });
+        </script>
+        <script>
+            function confirmSubmit()
+            {
+            var agree=confirm("Are you sure you wish to delete this file?");
+            if (agree)
+                document.forms["myform"].submit();
+            else
+                return false ;
+            }
         </script>
     </head>
     <body class="bg-primary-Light">
