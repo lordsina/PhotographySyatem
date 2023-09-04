@@ -13,13 +13,22 @@
         });
         </script>
         <script>
-            function confirmSubmit()
+            function confirmSubmit(id=-1)
             {
-            var agree=confirm("Are you sure you wish to delete this file?");
-            if (agree)
+            var agree=confirm("از این کار اطمینان دارید؟");
+            if (agree){
+                if(id==-1)
                 document.forms["myform"].submit();
+                else
+                document.forms["myform"+id].submit();
+            }   
             else
                 return false ;
+            }
+
+            function confirmSubmitn()
+            {
+                document.forms["myform"].submit();
             }
         </script>
     </head>

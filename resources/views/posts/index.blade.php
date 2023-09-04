@@ -2,8 +2,7 @@
 
 @section('content')
  <h1>پست ها</h1>
-
-    <a href="{{ route('posts.create') }}" class="btn btn-primary mb-2">ایجاد پست </a>
+    <a href="{{ route('posts.create') }}" class="btn mb-2 new-record-btn"><i class="fa-regular fa-file fa-beat" style="color: #00c7fc;"></i> ایجاد پست </a>
 
     <table class="table">
         <thead>
@@ -21,14 +20,15 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->category->name }}</td>
                 <td>{{ $post->user->username }}</td>
-                <td>{{ $post->created_at->format('Y-m-d H:i:s') }}</td>
+                <td>{{ $post->created_at->diffInDays(now()) }} روز قبل</td>
                 <td>
-                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-info">نمایش</a>
-                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">ویرایش</a>
+                    <a href="{{ route('posts.show', $post->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>
+                    <a href="{{ route('posts.edit', $post->id) }}"><i class="fa-regular fa-pen-to-square fa-beat" style="color: #fec700;"></i></a>
                     <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger" onclick="return confirm('آیا از این کار مطما هستید؟')">حذف</button>
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline;" class="myform" name="myform" id="myform">
+                            @method('DELETE')
+                            @csrf
+                        <a href="javascript:{}" onclick="javascript:confirmSubmit()" ><i class="fa-solid fa-trash fa-beat" style="color: #e32400;"></i></a>
                     </form>
                 </td>
             </tr>

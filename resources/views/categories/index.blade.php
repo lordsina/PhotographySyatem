@@ -22,10 +22,10 @@
                         <a href="{{ route('categories.show', $category->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>
                         
                         <a href="{{ route('categories.edit', $category->id) }}"><i class="fa-regular fa-pen-to-square fa-beat" style="color: #fec700;"></i></a>
-                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline;" class="myform" name="myform" id="myform">
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline;" class="myform{{ $category->id }}" name="myform{{ $category->id }}" id="myform{{ $category->id }}">
                             @method('DELETE')
                             @csrf
-                        <a href="javascript:{}" onclick="javascript:confirmSubmit()" ><i class="fa-solid fa-trash fa-beat" style="color: #e32400;"></i></a>
+                        <a href="javascript:{}" onclick="javascript:confirmSubmit({{ $category->id }})" ><i class="fa-solid fa-trash fa-beat" style="color: #e32400;"></i></a>
                         </form>
                     </td>
                 </tr>
