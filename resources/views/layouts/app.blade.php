@@ -17,7 +17,6 @@
         });
         </script>
         <script>
-
             function confirmSubmit(id=-1)
             {
             var agree=confirm("از این کار اطمینان دارید؟");
@@ -34,8 +33,7 @@
             function confirmSubmitn()
             {
                 document.forms["myform"].submit();
-            }
-            
+            }   
         </script>
     </head>
     <body class="bg-primary-Light">

@@ -21,11 +21,12 @@ public function index()
 
 public function store(Request $request)
 {
+    
     $user = auth()->user();
     $user->todos()->create([
-        'title' => $request->input('title')
+        'title' => $request->input('title'),
+        'description' => $request->input('description'),
     ]);
-
     return redirect()->route('todos.index');
 }
 
@@ -36,11 +37,21 @@ public function edit(Todo $todo)
 
 public function update(Request $request, Todo $todo)
 {
+    
+    $data_ck= $request->input('completed') =='on' ? true : false; 
     $todo->update([
-        'title' => $request->input('title')
+        'title' => $request->input('title'),
+        'description' => $request->input('description'),
+        'completed' => $data_ck,
     ]);
 
     return redirect()->route('todos.index');
+}
+
+public function show($id)
+{
+    $todos = Todo::findOrFail($id);
+    return view('todos.show', compact('todos'));
 }
 
 public function destroy(Todo $todo)
