@@ -10,9 +10,14 @@
         $(document).ready(function(e) {   
           $('#ale').delay(3000).slideUp(300);
           var bootstrap_enabled = (typeof $().modal == 'function');
+          $(".abc").click(function(){
+            $("#collapseOne").toggle();
+        });
+
         });
         </script>
         <script>
+
             function confirmSubmit(id=-1)
             {
             var agree=confirm("از این کار اطمینان دارید؟");
@@ -30,6 +35,7 @@
             {
                 document.forms["myform"].submit();
             }
+            
         </script>
     </head>
     <body class="bg-primary-Light">

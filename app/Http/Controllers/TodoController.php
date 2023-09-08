@@ -11,8 +11,12 @@ class TodoController extends Controller
 public function index()
 {
     $user = auth()->user();
-    $todos = $user->todos()->latest()->get();
-    return view('todos.index', compact('todos'));
+
+
+    $todos_completed = $user->todos()->where('completed',true)->latest()->get();
+    $todos_not_completed = $user->todos()->where('completed',false)->latest()->get();
+
+    return view('todos.index', compact('todos_completed','todos_not_completed'));
 }
 
 public function store(Request $request)
