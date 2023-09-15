@@ -53,13 +53,13 @@
                     <div class="card m-2">
                         <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <a class="abc">
+                            <a href="javascript:{}" onclick="javascript:collapse({{ $todo->id }})" >
                             <i class="fa-solid fa-xmark" style="color: #ff8c82;"></i> {{ $todo->title }}
                             </a>
                         </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="b{{ $todo->id }}">
                         <div class="card-body">
                         {{ $todo->description }}
                         </div>
@@ -89,13 +89,14 @@
                     <div class="card m-2">
                         <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
-                            <button class="btn btn-link abc" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <a href="javascript:{}" onclick="javascript:collapse({{ $todo->id }})" >
                             <i class="fa-solid fa-check" style="color: #96d35f;"></i> {{ $todo->title }}
+                            </a>
                             </button>
                         </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="b{{ $todo->id }}">
                         <div class="card-body">
                         {{ $todo->description }}
                         </div>

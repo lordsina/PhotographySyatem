@@ -24,7 +24,7 @@
           تعداد کل پست ها
         </p>
         <h5>
-          {{ $users->last()->first_name." ".$users->last()->last_name }}
+          {{ $posts->count()}}
 		</h5>
       </div>
     </div>

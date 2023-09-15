@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Session;
 use App\Models\User;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -25,8 +27,10 @@ class CustomAuthController extends Controller
 
         if(Auth::check()){
             $users=User::all();
+
             return view("dashboard",[
                 "users"=>$users,
+
             ]);
         }
         return view("login");
@@ -76,8 +80,10 @@ class CustomAuthController extends Controller
     {
         if(Auth::check()){
             $users=User::all();
+            $posts=Post::all();
             return view("dashboard",[
                 "users"=>$users,
+                "posts"=>$posts,
             ]);
         }
         return redirect('/login');
