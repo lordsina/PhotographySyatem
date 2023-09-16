@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->category->name }}</td>
-                <td>{{ $post->user->username }}</td>
+                <td>{{ $post->user->first_name }} {{ $post->user->last_name }}</td>
                 <td>{{ $post->created_at->diffInDays(now()) }} روز قبل</td>
                 <td>
                     <a href="{{ route('posts.show', $post->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>

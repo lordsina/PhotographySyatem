@@ -9,6 +9,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PlaceController;
 use App\Models\Hall;
 use App\Models\User;
 use Symfony\Component\Finder\Comparator\DateComparator;
@@ -79,6 +80,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
     Route::resource('categories', CategoryController::class);
 
+    Route::resource('places', PlaceController::class);
 
 
 

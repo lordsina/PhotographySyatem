@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="row align-items-start">
+  <h2>داشبورد</h2>
     <div class="col">
       <div class="m-2 p-1 rounded bg-info text-light" style="height: 100px;">
         <p>تعداد کل کاربران سایت</p>

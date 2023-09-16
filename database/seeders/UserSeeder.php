@@ -15,26 +15,8 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-              // Create roles and permissions
-        // $adminRole = Role::create(['name' => 'admin']);
-        // $editorRole = Role::create(['name' => 'editor']);
-        // $userRole = Role::create(['name' => 'user']);
-
-        // $createPostPermission = Permission::create(['name' => 'create post']);
-        // $editPostPermission = Permission::create(['name' => 'edit post']);
-
-        // // Assign roles and permissions to users
-        // User::factory(50)
-        // ->create()
-        // ->each(function ($user) use ($adminRole, $editorRole, $userRole, $createPostPermission, $editPostPermission) {
-        //     $randomRoles = fake()->randomElements([$adminRole, $editorRole, $userRole], fake()->numberBetween(1, 3));
-        //     $user->assignRole($randomRoles);
-        //     $randomPermissions = 
-        //     fake()->randomElements([$createPostPermission, $editPostPermission],
-        //     fake()->numberBetween(0, 2));
-        //     $user->givePermissionTo($randomPermissions);
-        // });
-
+ 
+        // Define First User
         DB::table('users')->insert([
             'first_name' => "سینا",
             'last_name' => "رشیدی آذر",
@@ -52,14 +34,15 @@ class UserSeeder extends Seeder
 
         ]);
 
-        User::factory(50)->create()->each(function ($user) {
-            // Assign random roles to the user
-            $roles = Role::inRandomOrder()->limit(rand(1, 3))->get();
-            $user->assignRole($roles);
-        });
+        // Define 50 Users
+        // User::factory(50)->create()->each(function ($user) {
+        //     // Assign random roles to the user
+        //     $roles = Role::inRandomOrder()->limit(rand(1, 3))->get();
+        //     $user->assignRole($roles);
+        // });
 
-
-                DB::table('users')->insert([
+        // Define Last User
+        DB::table('users')->insert([
             'first_name' => "بهزاد",
             'last_name' => "دشتی",
             'username' => "behzaddasti",
@@ -73,7 +56,6 @@ class UserSeeder extends Seeder
             'active' => true,
             'password' => bcrypt('password'), // Default password for all users
             'remember_token' => Str::random(10),
-
         ]);
 
 
