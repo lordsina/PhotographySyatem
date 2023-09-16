@@ -21,7 +21,7 @@
                 <label class="form-check-label" for="completed">تکمیل شده</label>
             </div>
                 
-            <a href="javascript:{}" onclick="javascript:confirmSubmitn()" class="mt-4 btn mb-2 new-record-btn"><i class="fa-regular fa-file fa-beat" style="color: #00c7fc;"></i> ایجاد لیست انجام کار</a>
+            <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش</a>
             <br>
         </form>
     </div>

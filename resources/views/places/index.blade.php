@@ -7,20 +7,18 @@
     <table class="table">
         <thead>
             <tr>
-                <th>عنوان</th>
-                <th>دسته بندی</th>
-                <th>نویسنده</th>
-                <th>تاریخ ایجاد</th>
+                <th>ایدی</th>
+                <th>نام</th>
+                <th>توضیحات</th>
                 <th>عملیات</th>
             </tr>
         </thead>
         <tbody>
             @foreach($places as $place)
             <tr>
-                <td>{{ $place->title }}</td>
-                <td>{{ $place->category->name }}</td>
-                <td>{{ $place->user->first_name }} {{ $place->user->last_name }}</td>
-                <td>{{ $place->created_at->diffInDays(now()) }} روز قبل</td>
+                <td>{{ $place->id }}</td>
+                <td>{{ $place->name }}</td>
+                <td>{{ $place->description }}</td>
                 <td>
                     <a href="{{ route('places.show', $place->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>
                     <a href="{{ route('places.edit', $place->id) }}"><i class="fa-regular fa-pen-to-square fa-beat" style="color: #fec700;"></i></a>

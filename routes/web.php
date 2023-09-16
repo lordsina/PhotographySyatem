@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\ProfileController;
 use App\Models\Hall;
 use App\Models\User;
 use Symfony\Component\Finder\Comparator\DateComparator;
@@ -40,16 +41,13 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
 // nothing 
 
-    Route::get('dashboard',[CustomAuthController::class,"dashboard"])->middleware(['auth','verified'])->name("dashboard");
+    
 
 
-    Route::get('login',[CustomAuthController::class,"index"])->name("login");
-    Route::post('logincheck',[CustomAuthController::class,"logincheck"])->name("logincheck");
 
-    Route::get('register',[CustomAuthController::class,"register"])->name('register-user');
-    Route::post('registercheck',[CustomAuthController::class,"registercheck"])->name('registercheck');
 
-    Route::get('logout',[CustomAuthController::class,"logout"])->name('logout');
+
+   
 
     Route::get('edit/{id}',[CustomAuthController::class,"edit"])->name('edit');
 
@@ -82,6 +80,18 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
     Route::resource('places', PlaceController::class);
 
+
+    Route::get('register',[CustomAuthController::class,"register"])->name('register-user');
+    Route::post('registercheck',[CustomAuthController::class,"registercheck"])->name('registercheck');
+
+    Route::get('login',[CustomAuthController::class,"index"])->name("login");
+    Route::post('logincheck',[CustomAuthController::class,"logincheck"])->name("logincheck");
+    Route::get('logout',[CustomAuthController::class,"logout"])->name('logout');
+
+    Route::get('dashboard',[CustomAuthController::class,"dashboard"])->middleware(['auth','verified'])->name("dashboard");
+
+    Route::get('profile',[ProfileController::class,"index"])->name("profile");
+    Route::put('profile',[ProfileController::class,"update"])->name("profile.update");
 
 
 

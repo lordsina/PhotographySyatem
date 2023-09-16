@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Edit Post</h1>
+    <h1>ویرایش پست</h1>
 
     <form action="{{ route('posts.update', $post->id) }}" method="post" class="myform" name="myform" id="myform">
         @csrf
@@ -27,8 +27,6 @@
                 @endforeach
             </select>
         </div>
-
-        <!-- Other fields you want to edit -->
 
         <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش</a>
     </form>

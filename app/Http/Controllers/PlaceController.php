@@ -21,31 +21,43 @@ class PlaceController extends Controller
      */
     public function create()
     {
-        //
+        return view('places.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,Place $place)
     {
-        //
+        // Validate the input
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $place->name=$request->name;
+        $place->description=$request->description;
+        $place->save();
+
+        return redirect()->route('places.index')->with('ایجاد شد', 'تالار با موفقیت ایحاد شد.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+   public function show($id)
     {
-        //
+        $place = Place::findOrFail($id);
+        return view('places.show', compact('place'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $place = Place::findOrFail($id);
+        return view('places.edit', compact('place'));
     }
 
     /**
@@ -53,14 +65,35 @@ class PlaceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
+
+        // Validate the input
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $place = Place::findOrFail($id);
+
+        // Update the post
+        $place->name=$request->name;
+        $place->description=$request->description;
+        $place->save();
+        // Update other attributes as needed
+
+        $place->save();
+
+        return redirect()->route('places.index')->with('ایجاد شد', 'تالار با موفقیت بروزرسانی شد.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $place = Place::findOrFail($id);
+        $place->delete();
+
+        return redirect()->route('places.index')->with('حذف شد', 'تالار با موفقیت حذف شد.');
     }
 }
