@@ -34,12 +34,12 @@ class UserSeeder extends Seeder
 
         ]);
 
-        // Define 50 Users
-        // User::factory(50)->create()->each(function ($user) {
-        //     // Assign random roles to the user
-        //     $roles = Role::inRandomOrder()->limit(rand(1, 3))->get();
-        //     $user->assignRole($roles);
-        // });
+       // Define 50 Users
+        User::factory(50)->create()->each(function ($user) {
+            // Assign random roles to the user
+            $roles = Role::inRandomOrder()->limit(rand(1, 3))->get();
+            $user->assignRole($roles);
+        });
 
         // Define Last User
         DB::table('users')->insert([
