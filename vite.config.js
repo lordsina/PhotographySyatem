@@ -10,8 +10,9 @@ export default defineConfig({
 
     ], resolve: {
         alias: {
+            '$': 'jQuery',
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
-            '$': 'jQuery'
+            '~select2': path.resolve(__dirname, 'node_modules/select2'),
         }
     }
 });
