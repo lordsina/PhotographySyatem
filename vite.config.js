@@ -13,6 +13,7 @@ export default defineConfig({
             '$': 'jQuery',
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
             '~select2': path.resolve(__dirname, 'node_modules/select2'),
+            '~dropzone': path.resolve(__dirname, 'node_modules/dropzone'),
         }
     }
 });

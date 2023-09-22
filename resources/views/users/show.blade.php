@@ -14,27 +14,29 @@
 
 
         <div class="card-body">
+            <label for="id_label_multiple">
+            سطح دسترسی کاربر
+            <select class="js-example-basic-multiple" name="states[]" multiple="multiple" id="id_label_multiple" style="width: 100%;">
             @foreach ($user->getRoleNames() as $role )
-                {{ $role }}
-                <br>
+            <option value="{{ $role }}" selected>{{ $role }}</option>
             @endforeach
-            <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
-                <option value="AL">Alabama</option>
-                <option value="WY">Wyoming</option>
+            </select>
+            </label>
+            {{-- {{ $permissions= $user->getAllPermissions() }} --}}
+            <h3>مجوز</h3>
+            <select class="js-example-basic-multiple" name="states[]" multiple="multiple" style="width: 100%;">
+            @foreach($user->getAllPermissions() as $permission)
+            <option value="{{ $permission->name }}" selected>{{ $permission->name }}</option>
+            @endforeach 
+
+
             </select>
 
-            <br>
-            ------------------------
-            {{-- {{ $permissions= $user->getAllPermissions() }} --}}
-            <br>
-
-            @foreach($user->getAllPermissions() as $permission)
-		        {{ $permission->name }}
-                <br>
-            @endforeach 
         </div>
 
         <div class="card-footer text-muted">
+            <form action="/target" class="dropzone" id="my-great-dropzone">
+            </form>
         </div>
     </div>
 

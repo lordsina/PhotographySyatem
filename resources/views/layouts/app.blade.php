@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>سیستم مدیریت آتلیه</title>
-        @vite(['resources/scss/app.scss'])
+        @vite(['resources/scss/app.scss','resources/js/app.js'])
+        <script src="https://kit.fontawesome.com/084dfeabed.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary-Light">
         @include('layouts.nav')
@@ -40,15 +41,24 @@
         <footer>
             {{-- Footer Section --}}
             @include('layouts.footer')
-        </footer>   
-        
-        @vite(['resources/js/app.js'])
-        <script src="https://kit.fontawesome.com/084dfeabed.js" crossorigin="anonymous"></script>
+        </footer> 
         <script type="module">
-        $(document).ready(function(e) {   
-          $('#ale').delay(3000).slideUp(300);
-          var bootstrap_enabled = (typeof $().modal == 'function');
-          $('.js-example-basic-multiple').select2();
+        $(document).ready(function(e) {  
+
+            $('#ale').delay(3000).slideUp(300);
+            var bootstrap_enabled = (typeof $().modal == 'function');
+            $('.js-example-basic-multiple').select2();
+            
+            Dropzone.options.myGreatDropzone = { // camelized version of the `id`
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 2, // MB
+                accept: function(file, done) {
+                if (file.name == "justinbieber.jpg") {
+                    done("Naha, you don't.");
+                }
+                else { done(); }
+                }
+            };
         });
         </script>
         <script>
@@ -75,5 +85,11 @@
             }
 
         </script>
+
+<script>
+
+
+</script>
+
     </body>
 </html>
