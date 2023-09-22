@@ -1,5 +1,11 @@
 <?php
-function flash($message,$level='success'){
-    session()->flash('flash_message', $message);
-    session()->flash('flash_message_level', $level);
+// composer dump-autoload
+function flash($title=null,$message=null){
+    $flash=app('App\Http\Flash');
+
+    if(func_num_args()==0){
+        return $flash;
+    }
+
+    return $flash->info($title,$message);
 }

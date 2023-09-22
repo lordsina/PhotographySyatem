@@ -45,8 +45,6 @@
         <script type="module">
         $(document).ready(function(e) {  
 
-            $('#ale').delay(3000).slideUp(300);
-            var bootstrap_enabled = (typeof $().modal == 'function');
             $('.js-example-basic-multiple').select2();
             
             Dropzone.options.myGreatDropzone = { // camelized version of the `id`
@@ -85,11 +83,6 @@
             }
 
         </script>
-
-<script>
-
-
-</script>
-
+        @include('flash')
     </body>
 </html>

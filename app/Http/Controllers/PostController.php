@@ -42,6 +42,8 @@ class PostController extends Controller
 
         $post->save();
 
+        flash("ثبت موفق","ایجاد پست با موفقیت انجام شد.");
+
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
 
