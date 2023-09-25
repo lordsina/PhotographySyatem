@@ -53,6 +53,14 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
+    public function upload(Request $request,$id){
+       $post = Post::findOrFail($id);
+       $file=$request->file('file');
+       $name=time().$file->getClientOriginalName();
+       $file->move('upload/pictures/',$name);
+       $post->uploads()->create(['image_path'=>"/upload/pictures/{$name}"]);
+    }
+
     public function edit($id)
     {
         $post = Post::findOrFail($id);

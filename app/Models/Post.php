@@ -20,6 +20,10 @@ class Post extends Model
         'category_id',
     ];
 
+    public function uploads()
+    {
+        return $this->hasMany(Upload::class);
+    }
   // Define the relationship between Post and Category
     public function category()
     {

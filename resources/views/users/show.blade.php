@@ -35,8 +35,6 @@
         </div>
 
         <div class="card-footer text-muted">
-            <form action="/target" class="dropzone" id="my-great-dropzone">
-            </form>
         </div>
     </div>
 

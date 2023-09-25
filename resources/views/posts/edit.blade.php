@@ -31,5 +31,11 @@
         <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش</a>
     </form>
 
+    <form method="POST" action="{{ route('upload',$post->id) }}" class="dropzone" id="my-great-dropzone" name="file" >
+        @csrf
+    </form>
+
+    
+
         <a href="{{ route('posts.index') }}" class="mt-4 btn mb-2 back-btn"><i class="fa-solid fa-backward" style="color: #e392fe;"></i> بازگشت </a>
 @endsection

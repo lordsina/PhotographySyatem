@@ -69,6 +69,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
 
     // Compelete Routes 
+    
 
     Route::resource('users', UserController::class);
 
@@ -80,6 +81,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
     Route::resource('places', PlaceController::class);
 
+    Route::post('/posts/upload/{post}','App\Http\Controllers\PostController@upload')->name('upload');
 
     Route::get('register',[CustomAuthController::class,"register"])->name('register-user');
     Route::post('registercheck',[CustomAuthController::class,"registercheck"])->name('registercheck');
