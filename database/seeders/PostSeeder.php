@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 class PostSeeder extends Seeder
 {
     /**
@@ -12,26 +12,27 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('posts')->insert([
-            'user_id'=>1,
-            'title'=>"دنیای سوفی",
-            'content'=>"سقراط یکی از داشمندان بزرگ بوده است و جلوتر از قرن خود بوده است.",
-            'category_id'=>1,
-            'created_at'=>now(),
-        ]);
-        DB::table('posts')->insert([
-            'user_id'=>2,
-            'title'=>"مردی بنام اوه",
-            'content'=>"او چقدر زیبا بود به اندازه خورشید.",
-            'category_id'=>1,
-            'created_at'=>now(),
-        ]);
-        DB::table('posts')->insert([
-            'user_id'=>1,
-            'title'=>"به روز رسانی جدید",
-            'content'=>"به دلیل مشکلات  در زیر ساخت ما سایت خود را بروز کرده ایم.",
-            'category_id'=>3,
-            'created_at'=>now(),
-        ]);
+
+        $post=new Post();
+        $post->title="دنیای سوفی";
+        $post->content="سقراط یکی از داشمندان بزرگ بوده است و جلوتر از قرن خود بوده است.";
+        $post->category_id=1;
+        $post->user_id=1;
+        $post->save();
+
+        $post=new Post();
+        $post->title="خوش آمدید";
+        $post->content="چطوری؟";
+        $post->category_id=1;
+        $post->user_id=2;
+        $post->save();
+
+        $post=new Post();
+        $post->title="سلام";
+        $post->content="پست جدید";
+        $post->category_id=3;
+        $post->user_id=1;
+        $post->save();
+
     }
 }

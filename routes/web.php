@@ -11,6 +11,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 use App\Models\Hall;
 use App\Models\User;
 use Symfony\Component\Finder\Comparator\DateComparator;
@@ -64,7 +66,8 @@ use Symfony\Component\Finder\Comparator\DateComparator;
     });
 
 
-  
+Route::resource('roles', RoleController::class);
+Route::resource('permissions', PermissionController::class);
 
 
 

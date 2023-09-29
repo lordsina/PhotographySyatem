@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Todo;
+// use Illuminate\Support\Facades\DB;
 
 class TodoSeeder extends Seeder
 {
@@ -13,34 +14,45 @@ class TodoSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('todos')->insert([
-            "user_id"=>1,
-            "title"=>"خرید وسایل",
-            "description"=>"گوشت - ماست - سوسیس",
-            "completed"=>true,
-            'created_at'=>now(),
+
+
+                    // Inserting records for user with ID 1
+        Todo::create([
+            "user_id" => 1,
+            "title" => "خرید وسایل",
+            "description" => "گوشت - ماست - سوسیس",
+            "completed" => true,
         ]);
-        DB::table('todos')->insert([
-            "user_id"=>1,
-            "title"=>"خرید",
-            "description"=>"ماژول",
-            "completed"=>false,
-            'created_at'=>now(),
+
+        Todo::create([
+            "user_id" => 1,
+            "title" => "خرید",
+            "description" => "ماژول",
+            "completed" => false,
         ]);
-        DB::table('todos')->insert([
-            "user_id"=>1,
-            "title"=>"گیتار",
-            "description"=>"تمرین درس خوان مارتین",
-            "completed"=>true,
-            'created_at'=>now(),
+
+        Todo::create([
+            "user_id" => 1,
+            "title" => "گیتار",
+            "description" => "تمرین درس خوان مارتین",
+            "completed" => true,
         ]);
-        DB::table('todos')->insert([
-            "user_id"=>2,
-            "title"=>"وسایل تحریر",
-            "description"=>"قلم -۰ مداد",
-            "completed"=>true,
-            'created_at'=>now(),
+
+        // Inserting a record for user with ID 2
+        Todo::create([
+            "user_id" => 2,
+            "title" => "وسایل تحریر",
+            "description" => "قلم -۰ مداد",
+            "completed" => true,
         ]);
+
+        // DB::table('todos')->insert([
+        //     "user_id"=>2,
+        //     "title"=>"وسایل تحریر",
+        //     "description"=>"قلم -۰ مداد",
+        //     "completed"=>true,
+        //     'created_at'=>now(),
+        // ]);
 
     }
 }

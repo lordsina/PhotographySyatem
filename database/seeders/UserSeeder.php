@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 class UserSeeder extends Seeder
 {
@@ -17,7 +16,7 @@ class UserSeeder extends Seeder
     {
  
         // Define First User
-        DB::table('users')->insert([
+        $user = new User([
             'first_name' => "سینا",
             'last_name' => "رشیدی آذر",
             'username' => "sinarashidiazar",
@@ -31,8 +30,8 @@ class UserSeeder extends Seeder
             'active' => true,
             'password' => bcrypt('password'), // Default password for all users
             'remember_token' => Str::random(10),
-
         ]);
+        $user->save();
 
        // Define 50 Users
         User::factory(50)->create()->each(function ($user) {
@@ -41,8 +40,7 @@ class UserSeeder extends Seeder
             $user->assignRole($roles);
         });
 
-        // Define Last User
-        DB::table('users')->insert([
+        $user = new User([
             'first_name' => "بهزاد",
             'last_name' => "دشتی",
             'username' => "behzaddasti",
@@ -57,14 +55,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('password'), // Default password for all users
             'remember_token' => Str::random(10),
         ]);
-
-
-        // User::factory(10)->create()->each(function ($user) {
-        //     $roles = $user->getRoleNames();
-        //     dump($roles); // Debugging output
-        // });
-
+        $user->save();
         
-
     }
 }

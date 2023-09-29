@@ -22,9 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(PostSeeder::class);
         $this->call(TodoSeeder::class);
-        $this->call(BookSeeder::class);
-        $this->call(BookCommentSeeder::class);
-        Hall::factory(10)->create();
         
         
 
