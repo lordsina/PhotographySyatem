@@ -54,6 +54,9 @@ class PostController extends Controller
     }
 
     public function upload(Request $request,$id){
+        $this->validate($request,[
+            'file'=>'required|mimes:png,jpg'
+        ]);
        $post = Post::findOrFail($id);
        $file=$request->file('file');
        $name=time().$file->getClientOriginalName();

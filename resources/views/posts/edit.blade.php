@@ -31,9 +31,21 @@
         <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش</a>
     </form>
 
-    <form method="POST" action="{{ route('upload',$post->id) }}" class="dropzone" id="my-great-dropzone" name="file" >
+    <form method="POST" action="{{ route('upload',$post->id) }}" class="dropzone mb-5 mt-5" id="my-great-dropzone" name="file" >
         @csrf
     </form>
+
+
+    <div class="container">
+        <div class="row">
+            @foreach ($post->uploads as $upload )
+            <div class="col-6">
+                <img class="img-thumbnail" src="{{ $upload->image_path }}" alt="{{ $upload->image_path }}">
+            </div>
+            @endforeach            
+        </div>
+    </div>
+
 
     
 
