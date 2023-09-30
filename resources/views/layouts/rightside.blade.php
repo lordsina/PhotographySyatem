@@ -5,5 +5,7 @@
     <div class="w-100 mt-3 h-20 border-bottom  border-top pt-2"><a class="btn" href="/todos" style="color: #74a7fe;"><i class="fa-solid fa-check" style="color: #74a7fe;"></i> لیست انجام کار</a></div>
     <div class="w-100 mt-3 h-20 border-bottom border-top pt-2"><a class="btn" href="/places" style="color: #ffb43f;"><i class="fa-solid fa-store" style="color: #ffb43f;"></i> تالار باغ ها</a></div>
     <div class="w-100 mt-3 h-20 border-bottom border-top pt-2"><a class="btn" href="/users" style="color: #00c7fc;"><i class="fa-solid fa-users" style="color: #00c7fc;"></i> کاربران</a></div>
+    <div class="w-100 mt-3 h-20 border-bottom border-top pt-2"><a class="btn" href="/roles" style="color: #004d65;"><i class="fa-solid fa-user-secret" style="color: #004d65;"></i> سمت</a></div>
+    <div class="w-100 mt-3 h-20 border-bottom border-top pt-2"><a class="btn" href="/permissions" style="color: #e32400;"><i class="fa-solid fa-lock" style="color: #e32400;"></i> دسترسی ها</a></div>
     <div class="w-100 mt-3 h-20 border-bottom  border-top pt-2"><a class="btn" href="/profile"><i class="fa-solid fa-gear" style="color: #000000;"></i> تنظیمات</a></div>
 </div>
