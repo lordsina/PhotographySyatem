@@ -70,9 +70,13 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->syncRoles($request->roles);
+        $user->syncPermissions($request->permissions);
+        $user->update($request->all());
+
+        return redirect()->route('users.index');
     }
 
     /**
