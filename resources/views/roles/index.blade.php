@@ -25,9 +25,9 @@
                         <td>{{ $role->id }}</td>
                         <td>{{ $role->name }}</td>
                         <td>
-                            <a href="{{ route('permissions.show', $role->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>
-                            <a href="{{ route('permissions.edit', $role->id) }}"><i class="fa-regular fa-pen-to-square fa-beat" style="color: #fec700;"></i></a>
-                            <form action="{{ route('permissions.destroy', $role->id) }}" method="POST" style="display: inline;" class="myform{{ $role->id }}" name="myform{{ $role->id }}" id="myform{{ $role->id }}" >
+                            <a href="{{ route('roles.show', $role->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>
+                            <a href="{{ route('roles.edit', $role->id) }}"><i class="fa-regular fa-pen-to-square fa-beat" style="color: #fec700;"></i></a>
+                            <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display: inline;" class="myform{{ $role->id }}" name="myform{{ $role->id }}" id="myform{{ $role->id }}" >
                                 @method('DELETE')
                                 @csrf
                                 <a href="javascript:{}" onclick="javascript:confirmSubmit({{ $role->id }})" ><i class="fa-solid fa-trash fa-beat" style="color: #e32400;"></i></a>

@@ -22,15 +22,17 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+         return view('permissions.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,Permission $permission)
     {
-        //
+         $permission = Permission::create(['name' => $request->name]);
+
+        return redirect()->route('permissions.index');
     }
 
     /**
@@ -61,8 +63,9 @@ class PermissionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Permission $permission)
     {
-        //
+        $permission->delete();
+        return redirect()->route('permissions.index');
     }
 }

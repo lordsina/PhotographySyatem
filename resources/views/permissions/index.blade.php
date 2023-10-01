@@ -36,7 +36,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3">No permissions found.</td>
+                        <td colspan="3">هیچ رکوردی وجود ندارد.</td>
                     </tr>
                 @endforelse
             </tbody>
