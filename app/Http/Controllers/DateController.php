@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hall;
+use App\Models\Date;
 use Illuminate\Http\Request;
 
 class DateController extends Controller
@@ -12,8 +12,8 @@ class DateController extends Controller
      */
     public function index()
     {
-        $halls=Hall::all();
-        return view('studio.dates.index',compact('halls'));
+        $dates = Date::all();
+        return view('dates.index', compact('dates'));
     }
 
     /**
@@ -21,15 +21,16 @@ class DateController extends Controller
      */
     public function create()
     {
-        //
+        return view('dates.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,Date $date)
     {
-        //
+        $date = Date::create($request->all());
+        return redirect()->route('dates.index');
     }
 
     /**

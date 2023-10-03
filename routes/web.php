@@ -66,14 +66,15 @@ use Symfony\Component\Finder\Comparator\DateComparator;
     });
 
 
-Route::resource('roles', RoleController::class);
-Route::resource('permissions', PermissionController::class);
 
+
+
+
+    Route::resource('dates', DateController::class);
 
 
     // Compelete Routes 
     
-
     Route::resource('users', UserController::class);
 
     Route::resource('todos',TodoController::class);
@@ -81,6 +82,12 @@ Route::resource('permissions', PermissionController::class);
     Route::resource('posts', PostController::class);
 
     Route::resource('categories', CategoryController::class);
+
+    Route::resource('places', PlaceController::class);
+
+    Route::resource('roles', RoleController::class);
+
+    Route::resource('permissions', PermissionController::class);
 
     Route::resource('places', PlaceController::class);
 

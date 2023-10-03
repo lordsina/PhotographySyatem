@@ -9,6 +9,7 @@
         <div class="form-group">
             <label for="name">نام سمت</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ $role->name }}" required>
+        </div>
 
             <h3>دسترسی</h3>
             <select class="js-example-basic-multiple" name="permissions[]" multiple="multiple"  style="width: 100%;">
@@ -18,8 +19,7 @@
                         </option>
                 @endforeach
             </select>
-        </div>
-        <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش سمت</a>
+
     </form>
 
         <a href="{{ route('roles.index') }}" class="mt-4 btn mb-2 back-btn"><i class="fa-solid fa-backward" style="color: #e392fe;"></i> بازگشت </a>
