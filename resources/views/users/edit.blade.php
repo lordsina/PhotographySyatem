@@ -49,24 +49,23 @@
         </div>
 
         <div class="card-body">
-            <label for="id_label_multiple">
             <h3>دسترسی</h3>
-            <select class="js-example-basic-multiple" name="roles[]" multiple="multiple" id="id_label_multiple" style="width: 100%;">
-            @foreach ($user->getRoleNames() as $role )
-            <option value="{{ $role }}" selected>{{ $role }}</option>
-            @endforeach
+            <select class="js-example-basic-multiple" name="roles[]" multiple="multiple"  style="width: 100%;">
+                @foreach($roles as $role)
+                        <option value="{{ $role->name }}" {{ $user->hasRole($role->name) ? 'selected' : '' }}>
+                            {{ $role->name }}
+                        </option>
+                @endforeach
             </select>
-            </label>
             {{-- {{ $permissions= $user->getAllPermissions() }} --}}
             <h3>سمت</h3>
             <select class="js-example-basic-multiple" name="permissions[]" multiple="multiple" style="width: 100%;">
-            @foreach($user->getAllPermissions() as $permission)
-            <option value="{{ $permission->name }}" selected>{{ $permission->name }}</option>
-            @endforeach 
-
-
+                @foreach($permissions as $permission)
+                    <option value="{{ $permission->name }}" {{ $user->hasPermissionTo($permission->name) ? 'selected' : '' }}>
+                        {{ $permission->name }}
+                    </option>
+                @endforeach
             </select>
-
         </div>
 
          <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش</a>
