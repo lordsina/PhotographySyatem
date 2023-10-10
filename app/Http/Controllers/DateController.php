@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Date;
 use Illuminate\Http\Request;
+use Morilog\Jalali\Jalalian;
 
 class DateController extends Controller
 {
@@ -29,7 +30,9 @@ class DateController extends Controller
      */
     public function store(Request $request,Date $date)
     {
-        $date = Date::create($request->all());
+        $georgianCarbonDate=Jalalian::fromFormat('Y/m/d', $request->date)->toCarbon();
+        $date->date=$georgianCarbonDate;
+        $date->save();
         return redirect()->route('dates.index');
     }
 

@@ -16,7 +16,19 @@
             @foreach($dates as $date)
             <tr>
                 <td>{{ $date->id }}</td>
-                <td>{{ $date->date }}</td>
+                <td>
+                    <?php  $pre=Carbon\Carbon::parse($date->date) ?>
+                    {{ $jDate = Morilog\Jalali\Jalalian::fromCarbon($pre)->format('Y-m-d'); }}
+                    <br>
+                    {{ 
+                    $georgianCarbonDate=\Morilog\Jalali\Jalalian::fromFormat('Y-m-d', $jDate)->toCarbon()->format('Y-m-d');
+                    }}
+                    <br>
+                    
+                    
+
+                    
+                </td>
                 <td>
                     <a href="{{ route('dates.show', $date->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>
                     <a href="{{ route('dates.edit', $date->id) }}"><i class="fa-regular fa-pen-to-square fa-beat" style="color: #fec700;"></i></a>
