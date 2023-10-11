@@ -1,22 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>ویرایش تالار</h1>
-
-    <form action="{{ route('places.update', $place->id) }}" method="post" class="myform" name="myform" id="myform">
+    <h1>ویرایش تاریخ</h1>
+    <form action="{{ route('dates.update',$date->id) }}" method="post" class="myform" name="myform" id="myform">
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label for="name">نام تالار</label>
-            <input type="text" class="form-control" id="name" name="name" value="{{ $place->name }}" required>
+            <?php  $pre=Carbon\Carbon::parse($date->date) ?>
+            <input style="text-align: center;" name="date" value="{{ $jDate = Morilog\Jalali\Jalalian::fromCarbon($pre)->format('Y/m/d'); }}" data-jdp>
         </div>
-
-        <div class="form-group">
-            <label for="description">توضیحات</label>
-            <textarea class="form-control" id="description" name="description" rows="5" required>{{ $place->description }}</textarea>
-        </div>
-        <a href="javascript:{}" onclick="javascript:confirmSubmit()" class="mt-4 btn mb-2 edit-btn"><i class="fa-solid fa-rotate" style="color: #fecb3e;"></i> ویرایش</a>
+        <a href="javascript:{}" onclick="javascript:confirmSubmitn()" class="mt-4 btn mb-2 new-record-btn"><i class="fa-regular fa-file fa-beat" style="color: #00c7fc;"></i> ویرایش تاریخ </a>
     </form>
-
-        <a href="{{ route('places.index') }}" class="mt-4 btn mb-2 back-btn"><i class="fa-solid fa-backward" style="color: #e392fe;"></i> بازگشت </a>
+        <a href="{{ route('dates.index') }}" class="mt-4 btn mb-2 back-btn"><i class="fa-solid fa-backward" style="color: #e392fe;"></i> بازگشت </a>
 @endsection

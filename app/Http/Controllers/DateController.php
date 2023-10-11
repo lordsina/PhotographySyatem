@@ -47,24 +47,27 @@ class DateController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Date $date)
     {
-        //
+        return view('dates.edit', compact('date'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Date $date)
     {
-        //
+        $georgianCarbonDate=Jalalian::fromFormat('Y/m/d', $request->date)->toCarbon();
+        $date->update(['date'=>$georgianCarbonDate]);
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Date $date)
     {
-        //
+        $date->delete();
+        return redirect()->route('dates.index');
     }
 }

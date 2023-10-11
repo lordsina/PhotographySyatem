@@ -70,7 +70,7 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
 
 
-    Route::resource('dates', DateController::class);
+ 
 
 
     // Compelete Routes 
@@ -90,6 +90,10 @@ use Symfony\Component\Finder\Comparator\DateComparator;
     Route::resource('permissions', PermissionController::class);
 
     Route::resource('places', PlaceController::class);
+
+    Route::resource('dates', DateController::class);
+
+    
 
     Route::post('/posts/upload/{post}','App\Http\Controllers\PostController@upload')->name('upload');
 
