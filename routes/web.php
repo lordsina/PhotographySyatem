@@ -9,6 +9,7 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
@@ -77,6 +78,8 @@ use Symfony\Component\Finder\Comparator\DateComparator;
     
     Route::resource('users', UserController::class);
 
+    Route::get('register',[UserController::class,"sms"])->name('sms');
+
     Route::resource('todos',TodoController::class);
 
     Route::resource('posts', PostController::class);
@@ -93,7 +96,9 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
     Route::resource('dates', DateController::class);
 
-    
+    Route::resource('invoices', InvoiceController::class);
+
+
 
     Route::post('/posts/upload/{post}','App\Http\Controllers\PostController@upload')->name('upload');
 

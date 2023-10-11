@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Melipayamak\MelipayamakApi;
 
 
 
@@ -36,6 +37,25 @@ class UserController extends Controller
         return view('users.index',compact('users'));
     }
 
+    public function sms(){
+
+    try{
+        $username = 'username';
+        $password = 'password';
+        $api = new MelipayamakApi($username,$password);
+        $sms = $api->sms();
+        $to = '09364900199';
+        $from = '5000...';
+        $text = 'تست وب سرویس ملی پیامک';
+        $response = $sms->send($to,$from,$text);
+        $json = json_decode($response);
+        echo $json->Value; //RecId or Error Number 
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+    }
+
+    }
     /**
      * Show the form for creating a new resource.
      */

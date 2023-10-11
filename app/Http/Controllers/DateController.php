@@ -39,9 +39,9 @@ class DateController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Date $date)
     {
-        //
+        return view('dates.show', compact('date'));
     }
 
     /**
