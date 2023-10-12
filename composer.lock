@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee31f1bd967f5b4393a9b11bf1cad320",
+    "content-hash": "7d07ead0bbdbf4fb5bebfecd64e17013",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -1882,6 +1882,59 @@
                 }
             ],
             "time": "2023-08-05T12:09:49+00:00"
+        },
+        {
+            "name": "lkdevelopment/hetzner-cloud-php-sdk",
+            "version": "v2.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LKDevelopment/hetzner-cloud-php-sdk.git",
+                "reference": "a6468384312742c5e64c3a9375af25cd75301937"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LKDevelopment/hetzner-cloud-php-sdk/zipball/a6468384312742c5e64c3a9375af25cd75301937",
+                "reference": "a6468384312742c5e64c3a9375af25cd75301937",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.3|^7.0",
+                "php": "^7.1|^8.0",
+                "tightenco/collect": "^5.5|^v6.18|^7.0|^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.43",
+                "phpunit/phpunit": "^7.0|^8.5.5|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LKDev\\HetznerCloud\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Kämmerling",
+                    "email": "kontakt@lukas-kaemmerling.de"
+                }
+            ],
+            "description": "A inofficial PHP SDK for the Hetzner Cloud API.",
+            "keywords": [
+                "cloud php library",
+                "hcloud",
+                "hetzner",
+                "hetzner cloud"
+            ],
+            "support": {
+                "issues": "https://github.com/LKDevelopment/hetzner-cloud-php-sdk/issues",
+                "source": "https://github.com/LKDevelopment/hetzner-cloud-php-sdk/tree/v2.6.2"
+            },
+            "time": "2023-05-09T05:17:14+00:00"
         },
         {
             "name": "melipayamak/php",
@@ -5623,6 +5676,60 @@
                 }
             ],
             "time": "2023-09-12T10:11:35+00:00"
+        },
+        {
+            "name": "tightenco/collect",
+            "version": "v8.83.27",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tighten/collect.git",
+                "reference": "07eed6cf7441c7a69c379fdcb118eec1a1fdd0e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tighten/collect/zipball/07eed6cf7441c7a69c379fdcb118eec1a1fdd0e6",
+                "reference": "07eed6cf7441c7a69c379fdcb118eec1a1fdd0e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0",
+                "symfony/var-dumper": "^3.4 || ^4.0 || ^5.0 || ^6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "nesbot/carbon": "^2.23.0",
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Collect/Support/helpers.php",
+                    "src/Collect/Support/alias.php"
+                ],
+                "psr-4": {
+                    "Tightenco\\Collect\\": "src/Collect"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Collect - Illuminate Collections as a separate package.",
+            "keywords": [
+                "collection",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/tighten/collect/issues",
+                "source": "https://github.com/tighten/collect/tree/v8.83.27"
+            },
+            "time": "2023-01-13T18:05:42+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

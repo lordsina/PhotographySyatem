@@ -75,10 +75,10 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
 
     // Compelete Routes 
-    
+    Route::get('users/sms',[UserController::class,"sms"])->name('sms');
     Route::resource('users', UserController::class);
 
-    Route::get('register',[UserController::class,"sms"])->name('sms');
+    
 
     Route::resource('todos',TodoController::class);
 

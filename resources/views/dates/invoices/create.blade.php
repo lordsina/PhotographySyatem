@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>ایجاد تالار</h1>
+    <h1>ایجاد فاکتور</h1>
 
     <form action="{{ route('places.store') }}" method="post" class="myform" name="myform" id="myform">
         @csrf
+
+
+
+        <div class="form-group">
+            <label for="name"> تالار</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
 
         <div class="form-group">
             <label for="name">نام تالار</label>

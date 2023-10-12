@@ -40,19 +40,19 @@ class UserController extends Controller
     public function sms(){
 
     try{
-        $username = 'username';
-        $password = 'password';
+        $username = '9364900199';
+        $password = '@Sina123456';
         $api = new MelipayamakApi($username,$password);
         $sms = $api->sms();
         $to = '09364900199';
-        $from = '5000...';
+        $from = '50004001900199';
         $text = 'تست وب سرویس ملی پیامک';
         $response = $sms->send($to,$from,$text);
         $json = json_decode($response);
-        echo $json->Value; //RecId or Error Number 
+        return $json->Value; //RecId or Error Number 
     }
     catch(Exception $e){
-        echo $e->getMessage();
+        return $e->getMessage();
     }
 
     }
