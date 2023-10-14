@@ -12,8 +12,4 @@ class Place extends Model
 
     protected $fillable = ['name', 'description'];
 
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
 }

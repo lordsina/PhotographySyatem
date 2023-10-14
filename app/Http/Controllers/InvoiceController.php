@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Date;
+use App\Models\Invoice;
 use Illuminate\Http\Request;
+use App\Models\Place;
 
 class InvoiceController extends Controller
 {
@@ -17,17 +20,23 @@ class InvoiceController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
-         return view('dates.invoices.create');
+        
+        $places=Place::all();
+
+        return view('dates.invoices.create',compact('places','date'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,Invoice $invoice)
     {
-        //
+        $invoice->place_id=$request->place_id;
+        $invoice->date_id=$request->date_id;
+        $invoice->save();
+        return back();
     }
 
     /**

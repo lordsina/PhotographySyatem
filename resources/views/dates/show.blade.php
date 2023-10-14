@@ -2,7 +2,25 @@
 
 @section('content')
  <h1>مراسم ها</h1>
-    <a href="{{ route('invoices.create') }}" class="btn mb-2 new-record-btn"><i class="fa-regular fa-file fa-beat" style="color: #00c7fc;"></i> ایجاد فاکتور </a>
+
+    <form action="{{ route('invoices.store') }}" method="post" class="myform mt-5" name="myform" id="myform">
+        @csrf
+        <input type="hidden" name="date_id" value="{{ $date->id }}">
+        <div class="form-group">
+            <label for="place">تالار</label>
+            <select class="form-control" id="place" name="place_id" required>
+                <option value="">انتخاب تالار</option>
+                @foreach($places as $place)
+                    <option value="{{ $place->id }}">{{ $place->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <a href="javascript:{}" onclick="javascript:confirmSubmitn()" class="mt-4 btn mb-2 new-record-btn"><i class="fa-regular fa-file fa-beat" style="color: #00c7fc;"></i> ایجاد تالار </a>
+        <br>
+        <hr>
+        <a href="{{ route('dates.index') }}" class="mt-4 btn mb-2 back-btn"><i class="fa-solid fa-backward" style="color: #e392fe;"></i> بازگشت </a>
+    </form>
 
     <table class="table">
         <thead>
@@ -15,8 +33,7 @@
         <tbody>
             @foreach($date->invoices as $invoice)
             <tr>
-                <td></td>
-                <td></td>
+                <td>{{  $invoice->place->name }}</td>
                 <td></td>
                 <td>
                     <a href="{{ route('invoices.show', $invoice->id) }}"><i class="fa-regular fa-eye fa-beat" style="color: #669c35;"></i></a>

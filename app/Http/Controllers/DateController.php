@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Date;
 use Illuminate\Http\Request;
 use Morilog\Jalali\Jalalian;
+use App\Models\Place;
 
 class DateController extends Controller
 {
@@ -41,7 +42,8 @@ class DateController extends Controller
      */
     public function show(Date $date)
     {
-        return view('dates.show', compact('date'));
+        $places=Place::all();
+        return view('dates.show', compact('date','places'));
     }
 
     /**
