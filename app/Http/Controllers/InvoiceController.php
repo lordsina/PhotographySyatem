@@ -42,9 +42,9 @@ class InvoiceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Invoice $invoice)
     {
-        
+        return view('dates.invoices.index',compact('invoice'));
     }
 
     /**
