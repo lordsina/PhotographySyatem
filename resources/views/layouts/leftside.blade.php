@@ -12,15 +12,10 @@
         //  $post->created_at->diffInDays(now())
             $jDate = Morilog\Jalali\Jalalian::fromCarbon($post->created_at)->format('Y-m-d');
 
-         }}روز قبل</h6>
+         }}</h6>
         <p class="card-text">{{ $post->content }}</p>
     </div>
     @endforeach
-    <div class="card-body">
-        <h6 class="card-title text-info">خوش آمدید</h6>
-        <h6 class="card-subtitle mb-2 text-muted">هر چیزی رو در هر جایی که هستی میتونی مدیریت و کنترول کنی</h6>
-        <p class="card-text"></p>
-    </div>
 
     
 </div>

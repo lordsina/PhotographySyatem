@@ -18,6 +18,8 @@ class Post extends Model
         'title',
         'content',
         'category_id',
+        'previous_post_id',
+        'next_post_id',
     ];
 
     public function uploads()
@@ -40,4 +42,17 @@ class Post extends Model
     { // we choose name of table which we want to relate it for this function. we use 's' beacuse it has many nodes
         return $this->hasMany(Comment::class);
     }
+
+
+    // Relationships
+    public function previousPost()
+    {
+        return $this->belongsTo(Post::class, 'previous_post_id');
+    }
+
+    public function nextPost()
+    {
+        return $this->belongsTo(Post::class, 'next_post_id');
+    }
+
 }

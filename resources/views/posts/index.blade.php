@@ -7,6 +7,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ایدی</th>
                 <th>عنوان</th>
                 <th>دسته بندی</th>
                 <th>نویسنده</th>
@@ -17,6 +18,7 @@
         <tbody>
             @foreach($posts as $post)
             <tr>
+                <td>{{ $post->id }}</td>
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->category->name }}</td>
                 <td>{{ $post->user->first_name }} {{ $post->user->last_name }}</td>

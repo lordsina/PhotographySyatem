@@ -28,7 +28,9 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'category_id' => 'required|exists:categories,id'
+            'category_id' => 'required|exists:categories,id',
+            'previous_post_id'=>'nullable|exists:posts,id',
+            'next_post_id' =>'nullable|exists:posts,id'
             // Add more validation rules as needed
         ]);
 
@@ -37,13 +39,17 @@ class PostController extends Controller
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'category_id' => $request->input('category_id'),
-            'user_id'=>auth()->user()->id
+            'user_id'=>auth()->user()->id,
+            'previous_post_id'=>$request->input('previous_post_id'),
+            'next_post_id'=>$request->input('next_post_id'),
+
             // Set other attributes as needed
         ]);
 
         $post->save();
 
-        flash("ثبت موفق","ایجاد پست با موفقیت انجام شد.");
+        flash()->success("ثبت موفق","ایجاد پست با موفقیت انجام شد.");
+        
 
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }

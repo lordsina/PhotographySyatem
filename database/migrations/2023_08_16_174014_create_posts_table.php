@@ -20,6 +20,13 @@ return new class extends Migration
             $table->timestamps();
             
             $table->foreign('category_id')->references('id')->on('categories');
+
+
+            $table->unsignedBigInteger('previous_post_id')->nullable();
+            $table->unsignedBigInteger('next_post_id')->nullable();
+
+            $table->foreign('previous_post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->foreign('next_post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
