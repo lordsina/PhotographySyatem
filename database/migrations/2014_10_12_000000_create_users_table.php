@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('credit_card_number', 16)->nullable();
             $table->boolean('active')->default(false);
             $table->string('password');
+            $table->string('description')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

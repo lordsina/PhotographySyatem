@@ -14,7 +14,9 @@ use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UploadController;
 use App\Models\Hall;
+use App\Models\Upload;
 use App\Models\User;
 use Symfony\Component\Finder\Comparator\DateComparator;
 
@@ -98,9 +100,11 @@ use Symfony\Component\Finder\Comparator\DateComparator;
 
     Route::resource('invoices', InvoiceController::class);
 
+    Route::resource('uploads',UploadController::class);
 
 
-    Route::post('/posts/upload/{post}','App\Http\Controllers\PostController@upload')->name('upload');
+
+    Route::post('/posts/upload/{post}','App\Http\Controllers\UploadController@upload')->name('upload');
 
     Route::get('register',[CustomAuthController::class,"register"])->name('register-user');
     Route::post('registercheck',[CustomAuthController::class,"registercheck"])->name('registercheck');

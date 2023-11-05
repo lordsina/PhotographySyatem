@@ -61,16 +61,7 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function upload(Request $request,$id){
-        $this->validate($request,[
-            'file'=>'required|mimes:png,jpg'
-        ]);
-       $post = Post::findOrFail($id);
-       $file=$request->file('file');
-       $name=time().$file->getClientOriginalName();
-       $file->move('upload/pictures/',$name);
-       $post->uploads()->create(['image_path'=>"/upload/pictures/{$name}"]);
-    }
+
 
     public function edit($id)
     {
@@ -106,7 +97,6 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
-
         return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
 }

@@ -6,7 +6,10 @@
       <span class="text-end">
         <div class="btn-group m-2">
           <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="badge badge-light">9</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+    99+
+    <span class="visually-hidden">unread messages</span>
+  </span>
             درود 
             @if(Auth::guest())
              کاربر عزیز
