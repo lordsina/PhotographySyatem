@@ -29,6 +29,14 @@
         </div>
 
 
+
+        <div id="editor">
+            <p>Hello World!</p>
+            <p>Some initial <strong>bold</strong> text</p>
+            <p><br></p>
+        </div>
+
+
         <div class="row">
             <div class="col">
                  <label for="previous_post_id">پست قبلی</label>

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>سیستم مدیریت آتلیه</title>
         @vite(['resources/scss/app.scss','resources/js/app.js'])
-        <script src="https://kit.fontawesome.com/084dfeabed.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.tiny.cloud/1/ryroe1tz83ly60eqkwmk60i6zwnmla3ehas3ttd83hevque4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     </head>
     <body class="bg-primary-Light">
         @include('layouts.nav')
@@ -42,44 +42,7 @@
             {{-- Footer Section --}}
             @include('layouts.footer')
         </footer> 
-        <script type="module">
-        $(document).ready(function(e) {  
-
-            $('.js-example-basic-multiple').select2();
-            
-            Dropzone.options.myGreatDropzone = { // camelized version of the `id`
-                paramName: "file", // The name that will be used to transfer the file
-                maxFilesize: 2, // MB
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
-            };  
-            jalaliDatepicker.startWatch();
-
-        });
-        </script>
-        <script>
-            function confirmSubmit(id=-1)
-            {
-            var agree=confirm("از این کار اطمینان دارید؟");
-            if (agree){
-                if(id==-1)
-                document.forms["myform"].submit();
-                else
-                document.forms["myform"+id].submit();
-            }   
-            else
-                return false ;
-            }
-
-            function confirmSubmitn()
-            {
-                document.forms["myform"].submit();
-            } 
-            
-            function collapse(btn){
-                $("#b"+btn).toggle();
-            }
-
-        </script>
+        @include('layouts.script')
         @include('flash')
     </body>
 </html>

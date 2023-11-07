@@ -19,6 +19,7 @@
         "datatables.net-dt": "^1.13.6",
         "dropzone": "^5.9.3",
         "jquery": "^3.7.0",
+        "quill": "^1.2",
         "select2": "^4.1.0-rc.0",
         "sweetalert": "^2.1.2"
     }

@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
+            
+            $table->decimal('amount', 10, 2); 
+
+            $table->string("description");
+
             $table->timestamps();
+
+            
 
             
         });

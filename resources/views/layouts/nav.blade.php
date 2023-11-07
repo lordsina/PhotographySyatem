@@ -23,7 +23,7 @@
               <li><a class="dropdown-item" href="{{ route('register-user') }}">ثبت نام</a></li>
             @else
             <li><a class="dropdown-item" href="{{ route('dashboard') }}">داشبورد</a></li>
-            <li><a class="dropdown-item" href="{{ route('edit',Auth::user()->id) }}">تنظیمات</a></li>
+            <li><a class="dropdown-item" href="{{ route('profile') }}">تنظیمات</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="{{ route('logout') }}">خروج</a></li>
             @endif
